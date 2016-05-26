@@ -8,11 +8,18 @@
 /**********************************************/
 
 @define-color white_color #ffffff;
-@define-color lighter_color #d8d8d8;
-@define-color base_color #a8a8a8;
-@define-color darker_color #787878;
+@define-color lighter_color #ffffff;
+@define-color base_color #e6e6e6;
+@define-color darker_color #c4c4c4;
 @define-color black_color #000000;
-@define-color scale_color #ffa500;
+@define-color scale_color #718bc5;
+
+@define-color selected_color #4464ac;
+@define-color border_color #5c5c5c;
+@define-color disabled_color #777777;
+@define-color disabled_bg #eeeeee;
+
+@define-color prelight_color #f5f5f5;
 
 /**********************************************/
 /* Derived border colors */
@@ -30,8 +37,8 @@
 @define-color theme_text_color @black_color;
 @define-color theme_bg_color @base_color;
 @define-color theme_fg_color @black_color;
-@define-color theme_selected_bg_color @darker_color;
-@define-color theme_selected_fg_color @lighter_color;
+@define-color theme_selected_bg_color @selected_color;
+@define-color theme_selected_fg_color @white_color;
 @define-color theme_tooltip_bg_color @base_color;
 @define-color theme_tooltip_fg_color @black_color;
 
@@ -95,22 +102,27 @@ button {
     background-color: @base_color;
     color: @black_color;
     padding: 3px;
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
+    border-left: 1px solid @border_color;
+    border-top: 1px solid @border_color;
+    border-right: 1.3px solid @border_color;
+    border-bottom: 1.3px solid @border_color;
 }
 
 button:active, button:checked {
     background-color: @darker_color;
-    border-left: 1px solid @black_color;
-    border-top: 1px solid @black_color;
-    border-right: 1.3px solid @inset_lighter_color;
-    border-bottom: 1.3px solid @inset_lighter_color;
+    border-left: 1.3px solid @border_color;
+    border-top: 1.3px solid @border_color;
+    border-right: 1px solid @border_color;
+    border-bottom: 1px solid @border_color;
+}
+
+button:hover {
+    background-color: @prelight_color;
 }
 
 button:disabled {
-    color: @darker_color;
+    color: @disabled_color;
+    background-color: @disabled_bg;
 }
 
 headerbar button, headerbar button:active, headerbar button:selected {
@@ -939,4 +951,4 @@ nautilus-desktop-window *{
 /* The End */
 /**********************************************/
 
-
+/* vim: set et ts=4 sw=4 : */
