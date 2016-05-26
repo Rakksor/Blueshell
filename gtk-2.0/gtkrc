@@ -1,304 +1,151 @@
-########################################
-# OneStepBack theme: gtk2 part               #
-# jpsb: July 2015 - April 2016         #
-########################################
+gtk-icon-sizes = "panel-menu=24,24"
 
-########################################
-# Color definitions
-########################################
+style "bluecurve-default"
+{
+  GtkMenuItem::selected_shadow_type = out
+  GtkWidget::interior_focus = 1
+  GtkButton::default_border = { 0, 0, 0, 0 }
+  GtkButton::default_outside_border = { 0, 0, 0, 0 }
+  GtkRange::trough_border = 0
 
-gtk-color-scheme = "white_color:#ffffff
-lighter_color:#d8d8d8
-base_color:#a8a8a8
-darker_color:#787878
-black_color:#000000
-scale_color: #ffa500
-"
+  GtkWidget::focus_padding = 1
 
-########################################
-# Styles
-########################################
+  GtkPaned::handle_size = 6
 
-style "default" {
+  GtkRange::slider_width = 15
+  GtkRange::stepper_size = 15
+  GtkScrollbar::min_slider_length = 30
+  GtkCheckButton::indicator_size = 12
+  GtkMenuBar::internal-padding = 0
 
-    base[NORMAL]        = @lighter_color
-    text[NORMAL]        = @black_color
-    bg[NORMAL]          = @base_color
-    fg[NORMAL]          = @black_color
+  #GtkOptionMenu::indicator_size = { 11, 6 }
+  #GtkOptionMenu::indicator_spacing = { 4, 5, 2, 2 }
 
-    base[PRELIGHT]      = @lighter_color
-    text[PRELIGHT]      = @black_color
-    bg[PRELIGHT]        = @base_color
-    fg[PRELIGHT]        = @black_color
+  GtkTreeView::expander_size = 14
+  GtkExpander::expander_size = 16
 
-    base[SELECTED]      = @darker_color
-    text[SELECTED]      = @lighter_color
-    bg[SELECTED]        = @darker_color
-    fg[SELECTED]        = @lighter_color
+  xthickness = 1
+  ythickness = 1
 
-    base[ACTIVE]        = @darker_color
-    text[ACTIVE]        = @lighter_color
-    bg[ACTIVE]          = @darker_color
-    fg[ACTIVE]          = @black_color
+  bg[NORMAL]      = "#e6e6e6"
+  bg[PRELIGHT]    = "#f5f5f5"
+  bg[ACTIVE]      = "#cccccc"
+  bg[SELECTED]    = "#4464ac"
+  bg[INSENSITIVE] = "#eeeeee"
 
-    base[INSENSITIVE]   = @darker_color
-    text[INSENSITIVE]   = @black_color
-    bg[INSENSITIVE]     = @base_color
-    fg[INSENSITIVE]     = @darker_color
+  base[SELECTED]  = "#4464ac"
+  base[ACTIVE]    = "#5e7ab7"
+  base[INSENSITIVE] = "#f0f0f0"
 
-    GtkWidget::focus-line-width = 0
-    GtkWidget::link-color = @black_color
-    GtkWidget::visited-link-color = @darker_color
-    GtkScrollbar::min-slider-length = 30
+  text[SELECTED]  = "#ffffff"
+  text[ACTIVE]    = "#ffffff"
 
-    GtkScrollbar::has_backward_stepper = 0
-    GtkScrollbar::has_forward_stepper = 1
-    GtkScrollbar::has_secondary_forward_stepper = 0
-    GtkScrollbar::has_secondary_backward_stepper = 1
+  fg[NORMAL]      = "#000000"
+  fg[ACTIVE]      = "#000000"
+  fg[PRELIGHT]    = "#000000"
+  fg[SELECTED]    = "#ffffff"
+  fg[INSENSITIVE] = "#777777"
 
+  engine "bluecurve" 
+  {
+    contrast = 1.0
+  }
 }
 
-style "scalebar-scrollbar" {
-
-    bg[NORMAL]          = @base_color
-    fg[NORMAL]          = @black_color
-
-    bg[PRELIGHT]        = @lighter_color
-
-    bg[ACTIVE]          = @darker_color
-
-    engine "pixmap" {
-
-        image {
-            function        = SLIDER
-            state           = NORMAL
-            file            = "../img/scrollbar_horizontal.png"
-            border          = { 2, 2, 2, 2 }
-            stretch         = TRUE
-            overlay_file    = "../img/scrollbar_thumb.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-        image {
-            function        = SLIDER
-            state           = INSENSITIVE
-            file            = "../img/scrollbar_horizontal.png"
-            border          = { 2, 2, 2, 2 }
-            stretch         = TRUE
-            overlay_file    = "../img/scrollbar_thumb.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-        image {
-            function        = SLIDER
-            state           = PRELIGHT
-            file            = "../img/scrollbar_horizontal.png"
-            border          = { 2, 2, 2, 2 }
-            stretch         = TRUE
-            overlay_file    = "../img/scrollbar_thumb.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-        image {
-            function        = SLIDER
-            state           = ACTIVE
-            file            = "../img/scrollbar_horizontal.png"
-            border          = { 2, 2, 2, 2 }
-            stretch         = TRUE
-            overlay_file    = "../img/scrollbar_thumb.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-        image {
-            function        = SLIDER
-            state           = NORMAL
-            file            = "../img/scrollbar_vertical.png"
-            border          = { 2, 2, 2, 2 }
-            stretch         = TRUE
-            overlay_file    = "../img/scrollbar_thumb.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-        image {
-            function        = SLIDER
-            state           = INSENSITIVE
-            file            = "../img/scrollbar_vertical.png"
-            border          = { 2, 2, 2, 2 }
-            stretch         = TRUE
-            overlay_file    = "../img/scrollbar_thumb.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-        image {
-            function        = SLIDER
-            state           = PRELIGHT
-            file            = "../img/scrollbar_vertical.png"
-            border          = { 2, 2, 2, 2 }
-            stretch         = TRUE
-            overlay_file    = "../img/scrollbar_thumb.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-        image {
-            function        = SLIDER
-            state           = ACTIVE
-            file            = "../img/scrollbar_vertical.png"
-            border          = { 2, 2, 2, 2 }
-            stretch         = TRUE
-            overlay_file    = "../img/scrollbar_thumb.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-    }
+style "bluecurve-wide" = "bluecurve-default"
+{
+  xthickness = 2
+  ythickness = 2
 }
 
-style "progressbar" {
-
-    bg[NORMAL]          = @darker_color
-    fg[NORMAL]          = @scale_color # XXX
-
-    bg[PRELIGHT]        = @scale_color # XXX
-    fg[PRELIGHT]        = @black_color
-
+style "bluecurve-tasklist" = "bluecurve-default"
+{
+  xthickness = 5
+  ythickness = 3
 }
 
-style "menuitem" {
-
-    text[NORMAL]        = @black_color
-    bg[NORMAL]          = @darker_color
-    fg[NORMAL]          = @black_color
-
-    text[PRELIGHT]      = @black_color
-    bg[PRELIGHT]        = @lighter_color
-    fg[PRELIGHT]        = @black_color
-
-    fg[SELECTED]        = @black_color # fg menu sélectionné libre office
+style "bluecurve-menu" = "bluecurve-default"
+{
+  xthickness = 3
+  ythickness = 3
 }
 
-style "check-radio" {
+style "bluecurve-menu-item" = "bluecurve-default"
+{
+  xthickness = 3
+  ythickness = 3 
 
-    bg[PRELIGHT]        = @base_color
-
-    base[INSENSITIVE]   = @lighter_color
-    text[INSENSITIVE]   = @darker_color
-    fg[INSENSITIVE]     = @base_color
+  bg[SELECTED]  = "#4464ac"
+  fg[PRELIGHT]  = "#ffffff"
 }
 
-style "menubar" {
-
-    fg[PRELIGHT]        = @black_color  # menu sélectionné geogebra
-
-    fg[SELECTED]        = @black_color # menu sélectionné thunderbird
+style "bluecurve-menu-itembar" = "bluecurve-default"
+{
+  xthickness = 3
+  ythickness = 3
 }
 
-style "paned" {
-
-    bg[PRELIGHT]        = @base_color   # séparateurs mobiles hover
-
+style "bluecurve-tree" = "bluecurve-default"
+{
+  xthickness = 2
+  ythickness = 2
 }
 
-style "gimp-loadingbar" {
-
-    bg[PRELIGHT]        = @scale_color   # loadingbar de gimp !
-
+style "bluecurve-frame-title" = "bluecurve-default"
+{
+  fg[NORMAL] = "#404040"
 }
 
-style "tooglecombo" {
-
+style "bluecurve-panel" = "bluecurve-default"
+{
+  xthickness = 3
+  ythickness = 3
 }
 
-########################################
-# Styles for testing
-########################################
-
-style "red" {
-
-    base[NORMAL]        = "red"
-    text[NORMAL]        = "red"
-    fg[NORMAL]          = "red"
-    bg[NORMAL]          = "red"
-
-    base[PRELIGHT]      = "red"
-    text[PRELIGHT]      = "red"
-    bg[PRELIGHT]        = "red"
-    fg[PRELIGHT]        = "red"
-
-    base[SELECTED]      = "red"
-    text[SELECTED]      = "red"
-    bg[SELECTED]        = "red"
-    fg[SELECTED]        = "red"
-
-    base[ACTIVE]        = "red"
-    text[ACTIVE]        = "red"
-    bg[ACTIVE]          = "red"
-    fg[ACTIVE]          = "red"
-
-    base[INSENSITIVE]   = "red"
-    text[INSENSITIVE]   = "red"
-    bg[INSENSITIVE]     = "red"
-    fg[INSENSITIVE]     = "red"
-
+style "bluecurve-tooltips" = "bluecurve-default"
+{
+  xthickness = 4
+  ythickness = 4
+  bg[NORMAL] = { 1.0,1.0,0.75 }
 }
 
-style "test" {
+style "metacity-frame"
+{
+  # Normal base color
+  #bg[NORMAL]  = "#bbbbbb"
 
-    base[NORMAL]        = "aqua"
-    text[NORMAL]        = "green"
-    bg[NORMAL]          = "magenta"
-    fg[NORMAL]          = "blue"
+  # Unfocused title background color
+  #bg[INSENSITIVE]  = { 0.8, 0.8, 0.8 }
 
-    base[PRELIGHT]      = "green"
-    text[PRELIGHT]      = "red"
-    bg[PRELIGHT]        = "lime"
-    fg[PRELIGHT]        = "maroon"
+  # Unfocused title text color
+  #fg[INSENSITIVE]  = { 1.55, 1.55, 1.55 }
 
-    base[SELECTED]      = "navy"
-    text[SELECTED]      = "green"
-    bg[SELECTED]        = "olive"
-    fg[SELECTED]        = "purple"
+  # Focused icon color
+  #fg[NORMAL]  = { 0.2, 0.2, 0.2 }
 
-    base[ACTIVE]        = "red"
-    text[ACTIVE]        = "green"
-    bg[ACTIVE]          = "teal"
-    fg[ACTIVE]          = "yellow"
+  # Focused title background color
+  #bg[SELECTED]  = { 0.5, 0.8, 0.5 }
 
-    base[INSENSITIVE]   = "purple"
-    text[INSENSITIVE]   = "green"
-    bg[INSENSITIVE]     = "yellow"
-    fg[INSENSITIVE]     = "aqua"
-
+  # Focused title text color
+  #fg[SELECTED]  = "black"
 }
 
-########################################
-# Widgets
-########################################
+class "GtkWidget" style "bluecurve-default"
 
-class "*" style "default"
-widget_class "*Scale*" style "scalebar-scrollbar"
-widget_class "*Scrollbar*" style "scalebar-scrollbar"
-widget_class "*ProgressBar*" style "progressbar"
-widget_class "*MenuItem*" style "menuitem"
-widget_class "*MenuBar*" style "menubar"
-widget_class "*Paned*" style "paned"
-class "GtkCheck*" style "check-radio"
-class "GtkRadio*" style "check-radio"
-widget_class "*Gimp*Paned*Bar*" style "gimp-loadingbar"
-
-#widget_class "*Link*" style "red"
-#widget_class "*Button*" style "red"
-#widget_class "*ComboBox*" style "red"
-#widget_class "*Separator*" style "red"
-#widget_class "*Entry*" style "red"
-#widget_class "*ToolButton*" style "red"
-#widget_class "*Option*" style "red"
-#widget_class "*ScaleButton*" style "red"
-#widget_class "*List*" style "red"
-#widget_class "*Notebook*" style "test"
-#widget_class "*Frame*" style "red"
-#widget_class "*Label*" style "red"
-#widget_class "*Window" style "red"
-
-# jpsb le 12 sept 2015: bug curieux: la barre d'avancement de xsane ne respecte la couleur demandée qu'après un redémarrage du thème, sinon la couleur est lime !
-
-# qt4 et flèches d'ascenseurs incompatible avec engine "pixmap"
-# barre de prog qt4
+class "GtkButton" style "bluecurve-wide"
+class "GtkRange" style "bluecurve-wide"
+class "GtkFrame" style "bluecurve-wide"
+class "GtkStatusbar" style "bluecurve-wide"
+class "GtkMenu" style "bluecurve-menu"
+class "GtkMenuItem" style "bluecurve-menu-item"
+widget_class "*.<GtkMenuItem>.*" style "bluecurve-menu-item"
+class "GtkEntry" style "bluecurve-wide"
+widget_class "*.tooltips.*.GtkToggleButton" style "bluecurve-tasklist"
+widget_class "*.GtkTreeView.GtkButton" style "bluecurve-tree"
+widget_class "*.GtkCTree.GtkButton" style "bluecurve-tree"
+widget_class "*.GtkList.GtkButton" style "bluecurve-tree"
+widget_class "*.GtkCList.GtkButton" style "bluecurve-tree"
+widget_class "*.GtkFrame.GtkLabel" style "bluecurve-frame-title"
+class "MetaFrames" style "metacity-frame"
+widget_class "BasePWidget.GtkEventBox.GtkTable.GtkFrame" style "bluecurve-panel"
+widget "gtk-tooltips" style "bluecurve-tooltips"
