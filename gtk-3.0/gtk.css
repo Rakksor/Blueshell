@@ -101,27 +101,22 @@ decoration:backdrop {
 button {
     background-color: @base_color;
     color: @black_color;
-    padding: 3px;
-    border-left: 1px solid @border_color;
-    border-top: 1px solid @border_color;
-    border-right: 1.3px solid @border_color;
-    border-bottom: 1.3px solid @border_color;
-}
-
-button:active, button:checked {
-    background-color: @darker_color;
-    border-left: 1.3px solid @border_color;
-    border-top: 1.3px solid @border_color;
-    border-right: 1px solid @border_color;
-    border-bottom: 1px solid @border_color;
+    padding: 5px;
+    border-image: url("../img/button-norm.png") 2 / 2px repeat;
 }
 
 button:hover {
     background-color: @prelight_color;
 }
 
+button:active, button:checked {
+    background-color: @darker_color;
+    border-image: url("../img/button-active.png") 2 / 2px repeat;
+}
+
 button:disabled {
     color: @disabled_color;
+    text-shadow: @white_color 1px 1px;
     background-color: @disabled_bg;
 }
 
@@ -523,7 +518,8 @@ entry:disabled {
 }
 
 label:disabled {
-    color: @lighter_color;
+    color: @disabled_color;
+    text-shadow: @white_color 1px 1px;
 }
 
 treeview {
