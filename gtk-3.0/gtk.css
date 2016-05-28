@@ -10,7 +10,7 @@
 @define-color white_color #ffffff;
 @define-color lighter_color #ffffff;
 @define-color base_color #e6e6e6;
-@define-color darker_color #c4c4c4;
+@define-color darker_color #cccccc;
 @define-color black_color #000000;
 @define-color scale_color #718bc5;
 
@@ -101,8 +101,11 @@ decoration:backdrop {
 button {
     background-color: @base_color;
     color: @black_color;
-    padding: 5px;
-    border-image: url("../img/button-norm.png") 2 / 2px repeat;
+    padding: 3px;
+    border-image: url("../img/button-norm.png") 2 repeat;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
 }
 
 button:hover {
@@ -111,7 +114,7 @@ button:hover {
 
 button:active, button:checked {
     background-color: @darker_color;
-    border-image: url("../img/button-active.png") 2 / 2px repeat;
+    border-image: url("../img/button-active.png") 2 repeat;
 }
 
 button:disabled {
@@ -138,13 +141,13 @@ headerbar button:checked { /* bouton de headerbarre actif */
 /**********************************************/
 
 menubar {
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-bottom: 1.3px solid @black_color;
-    border-right: 1.3px solid @black_color;
-    padding: 0px;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding: 1px 1px 0 1px;
+    border-image: url("../img/toolbar.png") 1 / 0 0 1px 0 repeat;
+    border-left: none;
+    border-top: none;
+    border-bottom: 1px solid transparent;
+    border-width: 1px 0;
+    border-right: none;
 }
 
 menu {
@@ -186,31 +189,27 @@ combobox menu {
 /**********************************************/
 
 toolbar {
-    padding: 1px;
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
+    padding: 0 1px;
+    border-image: url("../img/toolbar.png") 1 / 1px 0 repeat;
+    border-left: none;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-width: 1px 0;
+    border-right: none;
 }
 
 toolbar button {
-    border: 1px solid @base_color;
+    border: 2px solid transparent;
 }
 
 toolbar button:hover {
-    border-left: 1px solid  @lighter_color;
-    border-top: 1px solid @lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
+    border-image: url("../img/button-norm.png") 2 repeat;
 }
 
 toolbar button:checked,
 toolbar button:active {
     background-color: @darker_color;
-    border-left: 1.3px solid  @black_color;
-    border-top: 1.3px solid  @black_color;
-    border-right: 1px solid @inset_lighter_color;
-    border-bottom: 1px solid @inset_lighter_color;
+    border-image: url("../img/button-active.png") 2 repeat;
 }
 
 toolbar button:active:hover {
@@ -793,6 +792,13 @@ list row radio:disabled {
 	-gtk-icon-source: url("../img/radio-disabled-unchecked.png");
 }
 
+/**********************************************/
+/* tooltip */
+/**********************************************/
+
+tooltip {
+    border: 1px solid @black_color;
+}
 
 /**********************************************/
 /* popover */
