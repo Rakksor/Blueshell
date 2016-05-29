@@ -35,6 +35,9 @@
 @define-color separator_lighter_color @lighter_color;
 @define-color toolbar_seperator_color #a1a1a1;
 
+@define-color trough_border_color #999999;
+@define-color trough_bg_color #c4c4c4;
+
 /**********************************************/
 /* Derived border colors */
 /**********************************************/
@@ -95,10 +98,10 @@ decoration:backdrop {
 /**********************************************/
 
 * {
-    -GtkScrollbar-has-backward-stepper: false;
+    -GtkScrollbar-has-backward-stepper: true;
     -GtkScrollbar-has-forward-stepper: true;
     -GtkScrollbar-has-secondary-forward-stepper: false;
-    -GtkScrollbar-has-secondary-backward-stepper: true;
+    -GtkScrollbar-has-secondary-backward-stepper: false;
 
     -GtkWidget-window-dragging: true; /* behrz */
 	}
@@ -254,11 +257,11 @@ toolbar button:checked {
  
 scale trough {
     margin: 1px;
-    background-color: @darker_color;
-    border-left: 1px solid @inset_darker_color;
-    border-top: 1px solid  @inset_darker_color;
-    border-right: 1px solid @base_color;
-    border-bottom: 1px solid @base_color;
+    background-color: @trough_bg_color;
+    border-left: 1.5px solid @trough_border_color;
+    border-top: 1.5px solid  @trough_border_color;
+    border-right: 1px solid @trough_border_color;
+    border-bottom: 1px solid @trough_border_color;
 }
 
 scale.horizontal trough {
@@ -276,7 +279,7 @@ scale.horizontal slider {
     min-height: 12px;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../img/scrollbar_thumb.png");
+    background-image: url("../img/scrollbar_thumb_horizontal.png");
     background-color: @base_color;
     border-left: 1px solid @outset_lighter_color;
     border-top: 1px solid @outset_lighter_color;
@@ -380,26 +383,34 @@ treeview.view.trough:selected {
 /**********************************************/
 
 scrollbar trough {
-	background-color: @darker_color;
-    min-width: 14px;
-    min-height: 14px;
-    border-left: 1px solid @inset_darker_color;
-    border-top: 1px solid  @inset_darker_color;
-    border-right: 1px solid @base_color;
-    border-bottom: 1px solid @base_color;
+	background-color: @trough_bg_color;
+    border: 1px solid @trough_border_color;
 }
 
 scrollbar slider {
     background-color: @base_color;
-    min-width: 12px;
-    min-height: 12px;
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
+    min-width: 11px;
+    min-height: 11px;
+    margin: -1px;
+    border-image: url("../img/button-norm.png") 2 repeat;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("../img/scrollbar_thumb.png");
+}
+
+scrollbar.horizontal slider {
+    background-image: url("../img/scrollbar_thumb_horizontal.png");
+}
+
+scrollbar slider:hover {
+    background-color: @prelight_color;
+}
+
+scrollbar slider:active {
+    background-color: @base_color;
 }
 
 scrollbar.vertical button.up {
