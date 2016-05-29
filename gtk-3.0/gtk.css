@@ -122,11 +122,7 @@ button {
     border-color: transparent;
 }
 
-button:hover {
-    background-color: @prelight_color;
-}
-
-button:active, button:checked {
+button:checked {
     background-color: @darker_color;
     border-image: url("../img/button-active.png") 2 repeat;
 }
@@ -135,6 +131,16 @@ button:disabled {
     color: @disabled_color;
     text-shadow: @white_color 1px 1px;
     background-color: @disabled_bg;
+    -gtk-icon-effect: dim;
+}
+
+button:hover {
+    background-color: @prelight_color;
+}
+
+button:active {
+    background-color: @darker_color;
+    border-image: url("../img/button-active.png") 2 repeat;
 }
 
 headerbar button, headerbar button:active, headerbar button:selected {
@@ -218,6 +224,11 @@ toolbar button {
     border: 2px solid transparent;
 }
 
+toolbar button:checked {
+    background-color: @darker_color;
+    border-image: url("../img/button-active.png") 2 repeat;
+}
+
 toolbar button:disabled {
     -gtk-icon-effect: dim;
     background-color: @base_color;
@@ -225,22 +236,18 @@ toolbar button:disabled {
 
 toolbar button:hover {
     border-image: url("../img/button-norm.png") 2 repeat;
+    background-color: @prelight_color;
 }
 
-toolbar button:checked,
 toolbar button:active {
     background-color: @darker_color;
     border-image: url("../img/button-active.png") 2 repeat;
 }
 
-toolbar button:checked:hover {
-    background-color: @prelight_color;
+toolbar button:checked {
+    border-image: url("../img/button-active.png") 2 repeat;
 }
 
-toolbar button:checked:active {
-    background-color: @darker_color;
-}
-          
 /**********************************************/
 /* scale */
 /**********************************************/
