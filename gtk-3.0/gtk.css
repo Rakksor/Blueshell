@@ -21,6 +21,20 @@
 
 @define-color prelight_color #f5f5f5;
 
+/* Old colors from image */
+/*
+@define-color menuitem_top_color #445F9B;
+@define-color menuitem_bottom_color #5375C3;
+*/
+
+/* New colors (trial and error) */
+@define-color menuitem_top_color #445E9A;
+@define-color menuitem_bottom_color #5376C4;
+
+@define-color separator_darker_color #CECECE;
+@define-color separator_lighter_color @lighter_color;
+@define-color toolbar_seperator_color #a1a1a1;
+
 /**********************************************/
 /* Derived border colors */
 /**********************************************/
@@ -142,28 +156,26 @@ headerbar button:checked { /* bouton de headerbarre actif */
 
 menubar {
     padding: 1px 1px 0 1px;
-    border-image: url("../img/toolbar.png") 1 / 0 0 1px 0 repeat;
+    border-image: url("../img/toolbar.png") 1 repeat;
     border-left: none;
     border-top: none;
     border-bottom: 1px solid transparent;
-    border-width: 1px 0;
     border-right: none;
 }
 
 menu {
-    padding: 1px;
-    padding-right: 2px;
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-bottom: 1.3px solid @black_color;
-    border-right: 1.3px solid @black_color;
+    border-image: url("../img/menu.png") 2 repeat;
+    padding: 4px 3px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
 }
 
 menuitem {
-    padding-left: 8px;
-    padding-right: 5px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding: 1px 3px 1px 6px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
 }
 
 menu:active, menu:hover{
@@ -172,8 +184,12 @@ menu:active, menu:hover{
 }
 
 menuitem:active, menuitem:hover {
-    background-color: @lighter_color;
-    color: @black_color;
+    background-image: linear-gradient(
+            to bottom,
+            @menuitem_top_color, @menuitem_bottom_color
+        );
+    color: @white_color;
+    border-image: url("../img/menuitem-active.png") 2 repeat;
 }
 
 combobox menu {
@@ -202,6 +218,11 @@ toolbar button {
     border: 2px solid transparent;
 }
 
+toolbar button:disabled {
+    -gtk-icon-effect: dim;
+    background-color: @base_color;
+}
+
 toolbar button:hover {
     border-image: url("../img/button-norm.png") 2 repeat;
 }
@@ -212,12 +233,12 @@ toolbar button:active {
     border-image: url("../img/button-active.png") 2 repeat;
 }
 
-toolbar button:active:hover {
-    background-color: @base_color;
+toolbar button:checked:hover {
+    background-color: @prelight_color;
 }
 
-toolbar button:checked:hover {
-    background-color: @base_color;
+toolbar button:checked:active {
+    background-color: @darker_color;
 }
           
 /**********************************************/
@@ -624,30 +645,30 @@ list row:active {
 separator.vertical {
 	margin: 0px;
 	padding: 0px;
-	border-left: 1px solid @darker_color;
-	border-right: 1px solid @lighter_color;
+	border-left: 1px solid @separator_darker_color;
+	border-right: 1px solid @separator_lighter_color;
 }
 
 separator.horizontal {
 	margin: 0px;
 	padding: 0px;
-	border-top: 1px solid @darker_color;
-	border-bottom: 1px solid @lighter_color;
+	border-top: 1px solid @separator_darker_color;
+	border-bottom: 1px solid @separator_lighter_color;
 }
 
 toolbar separator {
 	margin: 5px;
 	margin-top: 7px;
 	margin-bottom: 7px;
-	border-left: 1px solid @inset_darker_color;
-	border-right: 1px solid @lighter_color;
+	border-top: 1px solid @toolbar_seperator_color;
+	border-left: 1px solid @toolbar_seperator_color;
 }
 
 menu separator {
-	margin: 0px;
+	margin: 4px 6px 6px 6px;
 	padding: 0px;
-	border-top: 1px solid @inset_darker_color;
-	border-bottom: 1px solid @inset_lighter_color;
+	border-top: 1px solid @separator_darker_color;
+	border-bottom: 1px solid @separator_lighter_color;
 }
 
 paned.vertical separator {
