@@ -413,129 +413,52 @@ scrollbar slider:active {
     background-color: @base_color;
 }
 
+scrollbar button {
+    padding: 1px;
+    min-width: 9px;
+    min-height: 9px;
+}
+
 scrollbar.vertical button.up {
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
-    margin-left: 1px;
-    margin-right: 1px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-	padding-left: 2px;
-	padding-right: 3px;
-	padding-top: 3px;
-	padding-bottom: 5px;
-    min-height: 4px;
-    min-width: 7px;
 	-gtk-icon-source: url("../img/arrow-up.png");
 }
 
-scrollbar.vertical button.up:active {
-    background-color: @darker_color;
-    border-left: 1.3px solid @black_color;
-    border-top: 1.3px solid @black_color;
-    border-right: 1px solid @inset_lighter_color;
-    border-bottom: 1px solid @inset_lighter_color;
-	-gtk-icon-source: url("../img/arrow-up.png");
+scrollbar.vertical button.down {
+	-gtk-icon-source: url("../img/arrow-down.png");
+}
+
+scrollbar.horizontal button.up {
+    -gtk-icon-source: url("../img/arrow-left.png");
+}
+
+scrollbar.horizontal button.down {
+    -gtk-icon-source: url("../img/arrow-right.png");
 }
 
 scrollbar.vertical button.up:disabled {
 	-gtk-icon-source: url("../img/arrow-up-disabled.png");
 }
 
-scrollbar.vertical button.down {
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
-    margin-left: 1px;
-    margin-right: 1px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-	padding-left: 2px;
-	padding-right: 3px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-    min-height: 4px;
-    min-width: 7px;
-	-gtk-icon-source: url("../img/arrow-down.png");
-}
-
-scrollbar.vertical button.down:active {
-    background-color: @darker_color;
-    border-left: 1.3px solid @black_color;
-    border-top: 1.3px solid @black_color;
-    border-right: 1px solid @inset_lighter_color;
-    border-bottom: 1px solid @inset_lighter_color;
-	-gtk-icon-source: url("../img/arrow-down.png");
-}
-
 scrollbar.vertical button.down:disabled {
 	-gtk-icon-source: url("../img/arrow-down-disabled.png");
-}
-
-scrollbar.horizontal button.up {
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-	padding-left: 3px;
-	padding-right: 5px;
-	padding-top: 2px;
-	padding-bottom: 3px;
-    min-height: 7px;
-    min-width: 4px;
-	-gtk-icon-source: url("../img/arrow-left.png");
-}
-
-scrollbar.horizontal button.up:active {
-    background-color: @darker_color;
-    border-left: 1.3px solid @black_color;
-    border-top: 1.3px solid @black_color;
-    border-right: 1px solid @inset_lighter_color;
-    border-bottom: 1px solid @inset_lighter_color;
-	-gtk-icon-source: url("../img/arrow-left.png");
 }
 
 scrollbar.horizontal button.up:disabled {
 	-gtk-icon-source: url("../img/arrow-left-disabled.png");
 }
 
-scrollbar.horizontal button.down {
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-	padding-left: 4px;
-	padding-right: 4px;
-	padding-top: 2px;
-	padding-bottom: 3px;
-    min-height: 7px;
-    min-width: 4px;
-	-gtk-icon-source: url("../img/arrow-right.png");
-}
-
-scrollbar.horizontal button.down:active {
-    background-color: @darker_color;
-    border-left: 1.3px solid @black_color;
-    border-top: 1.3px solid @black_color;
-    border-right: 1px solid @inset_lighter_color;
-    border-bottom: 1px solid @inset_lighter_color;
-	-gtk-icon-source: url("../img/arrow-right.png");
-}
-
 scrollbar.horizontal button.down:disabled {
-	-gtk-icon-source: url("../img/arrow-right-disabled.png");
+	-gtk-icon-source: url("../img/arrow-down-disabled.png");
 }
+
+scrollbar button:hover {
+    background-color: @prelight_color;
+}
+
+scrollbar button:active {
+    background-color: @darker_color;
+}
+
 /**********************************************/
 /* entry, treeview, textview, iconwiew */
 /**********************************************/
