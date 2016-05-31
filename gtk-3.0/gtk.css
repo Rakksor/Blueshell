@@ -448,7 +448,7 @@ scrollbar.horizontal button.up:disabled {
 }
 
 scrollbar.horizontal button.down:disabled {
-	-gtk-icon-source: url("../img/arrow-down-disabled.png");
+	-gtk-icon-source: url("../img/arrow-right-disabled.png");
 }
 
 scrollbar button:hover {
