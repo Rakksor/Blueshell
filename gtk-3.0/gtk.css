@@ -15,11 +15,14 @@
 @define-color scale_color #718bc5;
 
 @define-color selected_color #4464ac;
-@define-color border_color #5c5c5c;
-@define-color disabled_color #777777;
+@define-color border_color #a1a1a1;
+@define-color disabled_color #757575;
 @define-color disabled_bg #eeeeee;
 
 @define-color prelight_color #f5f5f5;
+
+@define-color separator_darker_color #CECECE;
+@define-color separator_lighter_color @lighter_color;
 
 /* Old colors from image */
 /*
@@ -31,12 +34,10 @@
 @define-color menuitem_top_color #445E9A;
 @define-color menuitem_bottom_color #5376C4;
 
-@define-color separator_darker_color #CECECE;
-@define-color separator_lighter_color @lighter_color;
-@define-color toolbar_seperator_color #a1a1a1;
-
 @define-color trough_border_color #999999;
 @define-color trough_bg_color #c4c4c4;
+
+@define-color entry_disabled_bg #f0f0f0;
 
 /**********************************************/
 /* Derived border colors */
@@ -200,14 +201,6 @@ menuitem:active, menuitem:hover {
     color: @white_color;
     border-image: url("../img/menuitem-active.png") 2 repeat;
 }
-
-combobox menu {
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-bottom: 1px solid @black_color;
-    border-right: 1px solid @black_color;
-}
-  
 
 /**********************************************/
 /* toolbar */
@@ -467,15 +460,16 @@ entry {
     background-color: @lighter_color;
     color: @black_color;
     padding: 2px;
-    border-left: 1.3px solid  @black_color;
-    border-top: 1.3px solid  @black_color;
-    border-right: 1px solid @inset_lighter_color;
-    border-bottom: 1px solid @inset_lighter_color;
+    border-image: url("../img/entry.png") 2 repeat;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
 }
 
 entry:disabled {
-    background-color: @darker_color;
-    color: @black_color;
+    background-color: @entry_disabled_bg;
+    color: @disabled_color;
+    border-image: url("../img/entry-disabled.png") 2 repeat;
 }
 
 label:disabled {
@@ -601,8 +595,8 @@ toolbar separator {
 	margin: 5px;
 	margin-top: 7px;
 	margin-bottom: 7px;
-	border-top: 1px solid @toolbar_seperator_color;
-	border-left: 1px solid @toolbar_seperator_color;
+	border-top: 1px solid @border_color;
+	border-left: 1px solid @border_color;
 }
 
 menu separator {
@@ -829,15 +823,32 @@ switch:disabled slider {
 /**********************************************/
 
 combobox arrow {  
-	min-height: 19px;
-	min-width: 19px;
+	min-height: 15px;
+	min-width: 15px;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("../img/combobox-arrow-down.png");
+    border-left: 1px solid @border_color;
 }
 
 combobox arrow:disabled {  
     background-image: url("../img/combobox-arrow-down-disabled.png");
+}
+
+combobox entry {
+    padding: 3px;
+}
+
+combobox entry + button arrow {
+    border: none;
+}
+
+combobox button {
+    padding: 2px;
+}
+
+combobox entry + button {
+    padding: 2px 3px;
 }
 
 menuitem arrow {
