@@ -706,18 +706,16 @@ checkbutton, radiobutton {
     background-color: @base_color;
 }
 
-/*notebook checkbutton, notebook radiobutton {
-    background-color: @lighter_color;
-}*/
+checkbutton:hover, radiobutton:hover {
+    background-color: @prelight_color;
+}
 
 checkbutton:disabled, radiobutton:disabled {
     color: @lighter_color;
 }
 
 check {
-    padding: 0px;
-    border: none;
-    margin: 5px;
+    margin: 4px;
     min-width: 13px;
     min-height: 13px;
 	-gtk-icon-source: url("../img/check-unchecked.png");
@@ -728,9 +726,7 @@ check:checked {
 }
 
 radio {
-    padding: 0px;
-    border: none;
-    margin: 5px;
+    margin: 4px;
     min-width: 13px;
     min-height: 13px;
 	-gtk-icon-source: url("../img/radio-unchecked.png");
@@ -743,27 +739,19 @@ radio:checked {
 }
 
 check:disabled {
-    min-width: 11px;
-    min-height: 11px;
 	-gtk-icon-source: url("../img/check-disabled-unchecked.png");
 }
 
 radio:disabled {
-    min-width: 11px;
-    min-height: 11px;
 	-gtk-icon-source: url("../img/radio-disabled-unchecked.png");
 }
 
 check:disabled:checked {
 	-gtk-icon-source: url("../img/check-disabled-checked.png");
-    min-width: 11px;
-    min-height: 11px;
 }
 
 radio:disabled:checked {
 	-gtk-icon-source: url("../img/radio-disabled-checked.png");
-    min-width: 11px;
-    min-height: 11px;
 }
 
 /* check and radio in menu */
