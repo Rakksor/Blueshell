@@ -482,7 +482,7 @@ treeview {
 }
 
 textview selection {
-    background-color: @darker_color;
+    background-color: @selected_color;
     color: @lighter_color;
 }
 
@@ -492,7 +492,7 @@ textview {
 }
 
 selection {
-    background-color: @darker_color;
+    background-color: @selected_color;
     color: @lighter_color;
 }
 
@@ -632,12 +632,12 @@ row {
     }
 
 row:selected {
-    background-color: @darker_color;
+    background-color: @selected_color;
     color: @lighter_color;
 }
 
 list row:active {
-    background-color: @darker_color;
+    background-color: @selected_color;
 }
 
 /**********************************************/
@@ -783,24 +783,6 @@ menuitem radio:disabled:checked {
     min-width: 5px;
     min-height: 5px;
 	-gtk-icon-source: url("../img/menuitem-radio-checked-disabled.png");
-}
-
-/* handbrake/defaults audio; tweaktools/bureau*/
-list row checkbutton, list row radiobutton {
-    background-color: transparent;
-    color: @black_color;
-}
-
-/* handbrake/defaults audio; tweaktools/bureau */
-list row checkbutton label:disabled,
-list row radiobutton label:disabled,
-list row check:disabled,
-list row radio:disabled {
-    background-color: @transparent;
-    color: @darker_color;
-    min-width: 11px;
-    min-height: 11px;
-	-gtk-icon-source: url("../img/radio-disabled-unchecked.png");
 }
 
 /**********************************************/
@@ -950,7 +932,7 @@ calendar {
 }
 
 calendar:selected {
-    background-color: @darker_color;
+    background-color: @selected_color;
     color: @lighter_color;
 }
 
@@ -963,7 +945,7 @@ calendar:indeterminate {
 /**********************************************/
 /* selection in evince */
 .view:selected  {
-    background-color: @darker_color;
+    background-color: @selected_color;
     color: @lighter_color;
 }
 
