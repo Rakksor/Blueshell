@@ -522,7 +522,7 @@ notebook tab:active {
     background-color: @base_color;
 }
 
-notebook stack {
+notebook.frame stack {
     border-image: url("../img/button-norm.png") 2 repeat;
     border-width: 2px;
     border-style: solid;
