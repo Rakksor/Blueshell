@@ -385,7 +385,7 @@ scrollbar trough {
 scrollbar slider {
     background-color: @base_color;
     min-width: 11px;
-    min-height: 11px;
+    min-height: 27px;
     margin: -1px;
     border-image: url("../img/button-norm.png") 2 repeat;
     border-width: 2px;
@@ -398,6 +398,8 @@ scrollbar slider {
 
 scrollbar.horizontal slider {
     background-image: url("../img/scrollbar_thumb_horizontal.png");
+    min-width: 27px;
+    min-height: 11px;
 }
 
 scrollbar slider:hover {
