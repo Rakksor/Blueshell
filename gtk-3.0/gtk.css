@@ -101,13 +101,15 @@ decoration:backdrop {
 /**********************************************/
 
 * {
+    -GtkMenu-horizontal-offset: -5px;
+    -GtkMenu-vertical-offset: 0;
     -GtkScrollbar-has-backward-stepper: true;
     -GtkScrollbar-has-forward-stepper: true;
     -GtkScrollbar-has-secondary-forward-stepper: false;
     -GtkScrollbar-has-secondary-backward-stepper: false;
 
     -GtkWidget-window-dragging: true; /* behrz */
-	}
+}
 
 .background {
     background-color: @base_color;
