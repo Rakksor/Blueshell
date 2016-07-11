@@ -18,11 +18,12 @@ a basis because most of the elements appeared to have similar geometry
 Installing
 ------------
 
-The Bluecurve engine is required for the GTK2 half.  You must install this
-separately.  (TODO: write instructions for this.  Keep eyes peeled.)
+See the [Installing](https://gitlab.com/KlipKyle/Blueshell/wikis/installing)
+page in the wiki.
 
-After installing the Bluecurve engine, simply drop this tree into
-`~/.themes/Blueshell/`
+Summary: the Bluecurve engine is required for the GTK2 half.  You must install
+this separately.  After installing the Bluecurve engine, simply drop this tree
+into `~/.themes/Blueshell/`
 
 Naming
 --------
