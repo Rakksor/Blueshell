@@ -755,11 +755,11 @@ radio:checked {
 }
 
 check:disabled {
-	-gtk-icon-source: url("../img/check-disabled-unchecked.png");
+	-gtk-icon-source: none;
 }
 
 radio:disabled {
-	-gtk-icon-source: url("../img/radio-disabled-unchecked.png");
+	-gtk-icon-source: none;
 }
 
 check:disabled:checked {
@@ -772,7 +772,7 @@ radio:disabled:checked {
 
 /* check and radio in menu */
 menuitem check, menuitem radio {
-	-gtk-icon-source: url("../img/menuitem-transparent.png");
+	-gtk-icon-source: none;
     min-width: 8px;
     min-height: 7px;
 }
@@ -781,6 +781,10 @@ menuitem check:checked {
 	-gtk-icon-source: url("../img/menuitem-check-checked.png");
     min-width: 8px;
     min-height: 7px;
+}
+
+menuitem check:hover:checked {
+    -gtk-icon-source: url("../img/menuitem-check-checked-hover.png");
 }
 
 menuitem check:disabled:checked {
@@ -793,6 +797,10 @@ menuitem radio:checked {
     min-width: 5px;
     min-height: 5px;
 	-gtk-icon-source: url("../img/menuitem-radio-checked.png");
+}
+
+menuitem radio:hover:checked {
+    -gtk-icon-source: url("../img/menuitem-radio-checked-hover.png");
 }
 
 menuitem radio:disabled:checked {
@@ -905,13 +913,17 @@ combobox entry + button {
 }
 
 menuitem arrow {
-	min-height: 15px;
-	min-width: 8px;
-	-gtk-icon-source: url("../img/menuitem-arrow-right.png");
+	min-height: 9px;
+	min-width: 9px;
+	-gtk-icon-source: url("../img/arrow-right.png");
 }
 
-menuitem arrow:disabled {
-	-gtk-icon-source: url("../img/menuitem-arrow-right-disabled.png");
+menuitem:hover > arrow {
+    -gtk-icon-source: url("../img/arrow-right-hover.png");
+}
+
+menuitem:disabled > arrow {
+	-gtk-icon-source: url("../img/arrow-right-disabled.png");
 }
 
 expander arrow {
@@ -927,15 +939,23 @@ expander arrow:checked {
 }
 
 popover arrow.right {
-	min-height: 15px;
-	min-width: 8px;
-	-gtk-icon-source: url("../img/menuitem-arrow-right.png");
+	min-height: 9px;
+	min-width: 9px;
+	-gtk-icon-source: url("../img/arrow-right.png");
+}
+
+popover:hover > arrow.right {
+    -gtk-icon-source: url("../img/arrow-right-hover.png");
 }
 
 popover arrow.left {
 	min-height: 15px;
 	min-width: 8px;
-	-gtk-icon-source: url("../img/menuitem-arrow-left.png");
+	-gtk-icon-source: url("../img/arrow-left.png");
+}
+
+popover:hover > arrow.left {
+    -gtk-icon-source: url("../img/arrow-left-hover.png");
 }
 
 /**********************************************/
