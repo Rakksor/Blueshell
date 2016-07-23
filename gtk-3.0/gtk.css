@@ -251,7 +251,7 @@ toolbar button:checked {
 /**********************************************/
 /* scale */
 /**********************************************/
- 
+
 scale trough {
     margin: 1px;
     background-color: @trough_bg_color;
@@ -262,39 +262,33 @@ scale trough {
 }
 
 scale.horizontal trough {
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 14px;
+	padding-right: 14px;
+    margin: 7px 0;
 }
 
 scale.vertical trough {
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+    margin: 0 7px;
 }
 
 scale.horizontal slider {
-    min-width: 29px;
-    min-height: 12px;
+    min-width: 31px;
+    min-height: 15px;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../img/scrollbar_thumb_horizontal.png");
-    background-color: @base_color;
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
+    background-image: url("../img/scale-horizontal.png");
+    margin: -6px 0;
 }
 
 scale.vertical slider {
-    min-width: 12px;
-    min-height: 29px;
+    min-width: 15px;
+    min-height: 31px;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../img/scrollbar_thumb.png");
-    background-color: @base_color;
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
+    background-image: url("../img/scale-vertical.png");
+    margin: 0 -6px;
 }
 
 scale indicator {
