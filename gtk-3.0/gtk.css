@@ -839,40 +839,40 @@ popover modelbutton:hover, popover modelbutton:active {
 /**********************************************/
 
 switch {
-	font: bold condensed;
-    background-color: @base_color;
-    color: @black_color;
-    border-left: 1.3px solid @black_color;
-    border-top: 1.3px solid @black_color;
-    border-right: 1.3px solid @lighter_color;
-    border-bottom: 1.3px solid @lighter_color;
+	font-weight: bold;
+    background-color: @darker_color;
+    border: 1px solid @trough_border_color;
 }
 
 switch:checked {
-   background-color: @scale_color;
+    background-color: @scale_color;
+    color: @white_color;
+    border: 1px solid @black_color;
+}
+
+switch:disabled {
+    background-color: @disabled_bg;
+    color: @disabled_color;
+    border: 1px solid @trough_border_color;
 }
 
 switch slider {
     background-color: @base_color;
-    padding: 1px;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../img/scrollbar_thumb.png");
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
-}
-
-switch:disabled {
-    background-color: @darker_color;
-    color: @base_color;
+    border-image: url("../img/button-norm.png") 2 repeat;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    margin: -1px;
 }
 
 switch:disabled slider {
-    background-color: @darker_color;
-    border-left: 1px solid @base_color;
-    border-top: 1px solid @base_color;
+    background-color: @disabled_bg;
+}
+
+switch:hover slider {
+    background-color: @prelight_color;
 }
 
 /**********************************************/
