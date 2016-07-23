@@ -685,26 +685,19 @@ list row:active {
 /* separator */
 /**********************************************/
 
-separator.vertical {
+separator {
 	margin: 0px;
 	padding: 0px;
-	border-left: 1px solid @separator_darker_color;
-	border-right: 1px solid @separator_lighter_color;
-}
-
-separator.horizontal {
-	margin: 0px;
-	padding: 0px;
-	border-top: 1px solid @separator_darker_color;
-	border-bottom: 1px solid @separator_lighter_color;
-}
-
-toolbar separator {
-	margin: 5px;
-	margin-top: 7px;
-	margin-bottom: 7px;
 	border-top: 1px solid @border_color;
 	border-left: 1px solid @border_color;
+}
+
+toolbar.horizontal separator {
+    margin: 7px 5px;
+}
+
+toolbar.vertical separator {
+    margin: 5px 7px;
 }
 
 menu separator {
