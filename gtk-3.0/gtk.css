@@ -41,6 +41,9 @@
 
 @define-color entry_disabled_bg #f0f0f0;
 
+@define-color link_color #0000ee;
+@define-color link_visited_color #551a8b;
+
 /**********************************************/
 /* Derived border colors */
 /**********************************************/
@@ -149,6 +152,32 @@ button:hover {
 button:active {
     background-color: @darker_color;
     border-image: url("../img/button-active.png") 2 repeat;
+}
+
+button.flat {
+    border-image: none;
+}
+
+button.flat:disabled {
+    background-color: @base_color;
+    border-image: none;
+}
+
+button.flat:hover {
+    border-image: url("../img/button-norm.png") 2 repeat;
+}
+
+button.flat:active {
+    border-image: url("../img/button-active.png") 2 repeat;
+}
+
+button.link {
+    color: @link_color;
+    text-decoration: underline;
+}
+
+button.link:visited {
+    color: @link_visited_color;
 }
 
 headerbar button, headerbar button:active, headerbar button:selected {
