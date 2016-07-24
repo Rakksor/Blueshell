@@ -531,7 +531,7 @@ iconview {
 }
 
 /**********************************************/
-/* frame, notebook, tab */
+/* notebook, tab */
 /**********************************************/
 
 /* Tabs */
@@ -643,14 +643,27 @@ notebook.frame > header.right tab:checked {
     margin-left: -2px;
 }
 
-/* Frames */
+/**********************************************/
+/* frame, statusbar */
+/**********************************************/
+
 frame {
     background-color: @base_color;
-    border-left: 1.3px solid  @black_color;
-    border-top: 1px solid  @black_color;
-    border-right: 1px solid @outset_lighter_color;
-    border-bottom: 1px solid @outset_lighter_color;
+    border: 1px solid @border_color;
     padding: 5px;
+    margin-top: 0.5em;
+}
+
+frame > label {
+    background-color: @base_color;
+    margin-top: -1em;
+}
+
+statusbar frame {
+    border-top: 1px solid @border_color;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
 }
 
 /**********************************************/
