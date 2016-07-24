@@ -110,8 +110,10 @@ decoration:backdrop {
     -GtkScrollbar-has-forward-stepper: true;
     -GtkScrollbar-has-secondary-forward-stepper: false;
     -GtkScrollbar-has-secondary-backward-stepper: false;
-
     -GtkWidget-window-dragging: true; /* behrz */
+
+    outline: dotted 1px;
+    outline-offset: -4px;
 }
 
 .background {
@@ -288,6 +290,7 @@ scale trough {
     border-top: 1.5px solid  @trough_border_color;
     border-right: 1px solid @trough_border_color;
     border-bottom: 1px solid @trough_border_color;
+    outline-offset: 6px;
 }
 
 scale.horizontal trough {
@@ -751,6 +754,7 @@ paned list separator.horizontal {
 checkbutton, radiobutton {
     color: @black_color;
     background-color: @base_color;
+    outline-offset: -2px;
 }
 
 checkbutton:hover, radiobutton:hover {
@@ -892,6 +896,7 @@ switch:disabled {
 }
 
 switch slider {
+    color: @black_color;
     background-color: @base_color;
     background-repeat: no-repeat;
     background-position: center center;
