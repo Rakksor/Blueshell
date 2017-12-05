@@ -15,3 +15,12 @@
     background-color: alpha (@selected_color, 0.75);
     border: 1px solid @selected_color;
 }
+
+/**********************************************/
+/* mate-panel */
+/**********************************************/
+
+PanelApplet.wnck-applet .wnck-pager:selected {
+    background-color: @selected_color;
+
+}
