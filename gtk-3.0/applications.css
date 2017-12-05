@@ -11,3 +11,7 @@
 {
     background-color: @selected_color;
 }
+.caja-notebook .rubberband {
+    background-color: alpha (@selected_color, 0.75);
+    border: 1px solid @selected_color;
+}
