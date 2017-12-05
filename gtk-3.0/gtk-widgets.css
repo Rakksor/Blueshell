@@ -408,6 +408,23 @@ label:disabled {
 }
 
 /**********************************************/
+/* view */
+/**********************************************/
+
+.view {
+    background-color: @lighter_color;
+}
+.view:selected,
+.view:selected:focus
+{
+    background-color: @selected_color;
+}
+.view .rubberband {
+    background-color: alpha (@selected_color, 0.75);
+    border: 1px solid @selected_color;
+}
+
+/**********************************************/
 /* treeview */
 /**********************************************/
 

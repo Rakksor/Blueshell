@@ -6,15 +6,6 @@
     background-color: @lighter_color;
     border: 1px solid @border_color;
 }
-.caja-notebook .view:selected,
-.caja-notebook .view:selected:focus
-{
-    background-color: @selected_color;
-}
-.caja-notebook .rubberband {
-    background-color: alpha (@selected_color, 0.75);
-    border: 1px solid @selected_color;
-}
 
 /**********************************************/
 /* mate-panel */
