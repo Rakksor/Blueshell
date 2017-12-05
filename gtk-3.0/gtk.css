@@ -66,3 +66,4 @@
 @define-color theme_tooltip_fg_color @black_color;
 
 @import url("gtk-widgets.css");
+@import url("applications.css");
