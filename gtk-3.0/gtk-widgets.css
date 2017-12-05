@@ -10,6 +10,10 @@
     outline-offset: -4px;
 }
 
+/**********************************************/
+/* background */
+/**********************************************/
+
 .background {
     background-color: @base_color;
     color: @black_color;
@@ -379,7 +383,7 @@ scrollbar button:active {
 }
 
 /**********************************************/
-/* entry, treeview, textview, iconwiew */
+/* entry */
 /**********************************************/
 
 entry {
@@ -403,9 +407,17 @@ label:disabled {
     text-shadow: @white_color 1px 1px;
 }
 
+/**********************************************/
+/* treeview */
+/**********************************************/
+
 treeview {
     background-color: @lighter_color;
 }
+
+/**********************************************/
+/* textview */
+/**********************************************/
 
 textview selection {
     background-color: @selected_color;
@@ -421,6 +433,10 @@ selection {
     background-color: @selected_color;
     color: @lighter_color;
 }
+
+/**********************************************/
+/* iconview */
+/**********************************************/
 
 iconview {
     background-color: @lighter_color;
@@ -541,7 +557,7 @@ notebook.frame > header.right tab:checked {
 }
 
 /**********************************************/
-/* frame, statusbar */
+/* frame */
 /**********************************************/
 
 frame {
@@ -556,6 +572,10 @@ frame > label {
     margin-top: -1em;
 }
 
+/**********************************************/
+/* statusbar */
+/**********************************************/
+
 statusbar frame {
     border-top: 1px solid @border_color;
     border-right: none;
@@ -564,7 +584,7 @@ statusbar frame {
 }
 
 /**********************************************/
-/* list, row */
+/* list */
 /**********************************************/
 
 list {
@@ -575,6 +595,10 @@ list {
     padding: 7px;
     background-color: @lighter_color;
 }
+
+/**********************************************/
+/* row */
+/**********************************************/
 
 row {
     background-color: @lighter_color;
