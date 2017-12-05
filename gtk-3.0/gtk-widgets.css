@@ -1,41 +1,3 @@
-/**********************************************/
-/* headerbar */
-/**********************************************/
-
-headerbar {
-    background-color: @black_color; /* fond de barre */
-    color: @black_color; /* séparations verticales dans la barre */
-}
-
-.titlebar .title {
-    color: @white_color;
-    font: bold;
-}
-
-.titlebar .title:backdrop {
-    color: @base_color;
-}
-
-/* ombres des fenêtres */
-decoration {
-    /* arrondi des angles la barre de titre */
-    border-radius: 4px 4px 0px 0px;
-
-    /* the resize cursor area */
-    margin: 10px;
-
-    /* box-shadow: [inset] horizontal_offset vertical_offset blur_radius color; */
-    box-shadow: 0 3px 3px 1px @darker_color, 0 0 0 1px @black_color;
-}
-
-decoration:backdrop {
-    box-shadow: 0 3px 3px 1px @darker_color, 0 0 0 1px @black_color;
-}
-
-/***********************************************/
-/* general */
-/**********************************************/
-
 * {
     -GtkMenu-horizontal-offset: -5px;
     -GtkMenu-vertical-offset: 0;
@@ -43,7 +5,6 @@ decoration:backdrop {
     -GtkScrollbar-has-forward-stepper: true;
     -GtkScrollbar-has-secondary-forward-stepper: false;
     -GtkScrollbar-has-secondary-backward-stepper: false;
-    -GtkWidget-window-dragging: true; /* behrz */
 
     outline: dotted 1px;
     outline-offset: -4px;
@@ -944,28 +905,3 @@ calendar:selected {
 calendar:indeterminate {
     color: @inset_lighter_color;
 }
-
-/**********************************************/
-/* tweaks */
-/**********************************************/
-/* selection in evince */
-.view:selected  {
-    background-color: @selected_color;
-    color: @lighter_color;
-}
-
-/* avoid border on the desktop when managed by nautilus */
-nautilus-desktop-window *{
-  border: none;
-}
-
-/* background of nautilus icon window */
-/*.nautilus-window, .nautilus-window notebook {
-  background-color: @lighter_color;
-}*/
-
-/**********************************************/
-/* The End */
-/**********************************************/
-
-/* vim: set et ts=4 sw=4 : */
