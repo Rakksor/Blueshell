@@ -11,10 +11,6 @@
 /* mate-panel */
 /**********************************************/
 
-PanelApplet.wnck-applet .wnck-pager {
-    padding: -1px -1px -1px -1px;
-}
-
 PanelApplet.wnck-applet .wnck-pager:selected {
     background-color: @selected_color;
 }
