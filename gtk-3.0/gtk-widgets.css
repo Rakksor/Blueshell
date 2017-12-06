@@ -5,7 +5,6 @@
     -GtkScrollbar-has-forward-stepper: true;
     -GtkScrollbar-has-secondary-forward-stepper: false;
     -GtkScrollbar-has-secondary-backward-stepper: false;
-    -gtk-icon-style: regular;
 
     outline: dotted 1px;
     outline-offset: -4px;
