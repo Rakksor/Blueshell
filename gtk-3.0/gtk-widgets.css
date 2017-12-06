@@ -78,19 +78,6 @@ button.link:visited {
     color: @link_visited_color;
 }
 
-headerbar button, headerbar button:active, headerbar button:selected {
-    border: none;
-    background-color: @black_color; /* fond de bouton de headerbarre */
-    color: @white_color; /* couleur int bouton de barre */
-}
-
-headerbar button:checked { /* bouton de headerbarre actif */
-    border: none;
-    background-color: @black_color;
-    color: @white_color;
-    font: bold;
-}
-
 /**********************************************/
 /* menu */
 /**********************************************/
