@@ -26,6 +26,8 @@
 @define-color separator_darker_color #CECECE;
 @define-color separator_lighter_color @lighter_color;
 
+@define-color tooltip_color #FFFFBF;
+
 /* Old colors from image */
 /*
 @define-color menuitem_top_color #445F9B;
