@@ -479,7 +479,7 @@ notebook > header.top {
 }
 
 notebook.frame > header.top {
-    margin-bottom: -2px;
+    margin-bottom: -1px;
 }
 
 notebook > header.top tab + tab {
@@ -487,8 +487,7 @@ notebook > header.top tab + tab {
 }
 
 notebook > header.top tab:checked {
-    border-bottom: 0;
-    margin-top: -1px;
+    border-bottom: 0px;
 }
 
 notebook.frame > header.top tab:checked {
