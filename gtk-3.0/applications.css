@@ -11,16 +11,16 @@
 /* mate-panel */
 /**********************************************/
 
-PanelApplet.wnck-applet {
-    margin: 2px;
-    padding: 0px 3px 0px 3px;
+PanelApplet.wnck-applet .wnck-pager {
+    padding: -1px -1px -1px -1px;
 }
 
 PanelApplet.wnck-applet .wnck-pager:selected {
     background-color: @selected_color;
 }
 
-MatePanelAppletFrameDBus > MatePanelAppletFrameDBus
-PanelSeparator {
-    background-image: url("img/separator_vertical.png");
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
+    background-image: url("../img/separator_vertical.png");
+    background-repeat: no-repeat;
+    background-position: left;
 }
