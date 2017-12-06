@@ -1,4 +1,5 @@
 * {
+    -GtkMenu-horizontal-offset: -5px;
     -GtkScrollbar-has-backward-stepper: true;
     -GtkScrollbar-has-forward-stepper: true;
     -gtk-icon-style: regular;
