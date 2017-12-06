@@ -1,10 +1,6 @@
 * {
-    -GtkMenu-horizontal-offset: -5px;
-    -GtkMenu-vertical-offset: 0;
     -GtkScrollbar-has-backward-stepper: true;
     -GtkScrollbar-has-forward-stepper: true;
-    -GtkScrollbar-has-secondary-forward-stepper: false;
-    -GtkScrollbar-has-secondary-backward-stepper: false;
     -gtk-icon-style: regular;
 
     outline: dotted 1px;
