@@ -454,7 +454,6 @@ notebook tab {
     background-color: @darker_color;
     border: 1px solid @black_color;
 	padding: 2px 3px;
-	margin: 0;
     border-image: url("../img/button-norm.png") 2 repeat;
     border-width: 2px;
     border-style: solid;
