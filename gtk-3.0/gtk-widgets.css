@@ -407,12 +407,13 @@ label:disabled {
 .view {
     background-color: @lighter_color;
 }
+
 .view:selected,
-.view:selected:focus
-{
+.view:selected:focus {
     background-color: @selected_color;
 }
-.view .rubberband {
+
+.view rubberband {
     background-color: alpha (@selected_color, 0.75);
     border: 1px solid @selected_color;
 }
