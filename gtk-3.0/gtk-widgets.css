@@ -564,6 +564,11 @@ notebook.frame > header.right tab:checked {
     margin-left: -2px;
 }
 
+notebook scrolledwindow.frame {
+margin-top: -1px;
+border: 1px solid @border_color;
+}
+
 /**********************************************/
 /* frame */
 /**********************************************/
