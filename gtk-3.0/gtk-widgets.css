@@ -782,6 +782,10 @@ tooltip {
     border: 1px solid @black_color;
 }
 
+tooltip.background {
+    background-color: @tooltip_color;
+}
+
 /**********************************************/
 /* popover */
 /**********************************************/
@@ -940,12 +944,4 @@ calendar:selected {
 
 calendar:indeterminate {
     color: @inset_lighter_color;
-}
-
-/**********************************************/
-/* tooltip */
-/**********************************************/
-
-tooltip.background {
-    background-color: @tooltip_color;
 }
