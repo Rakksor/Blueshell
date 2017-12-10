@@ -788,10 +788,8 @@ tooltip.background {
 /**********************************************/
 
 popover {
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
+    border: 1px solid @border_color;
+    background-color: @base_color;
 }
 
 popover modelbutton {
@@ -801,7 +799,7 @@ popover modelbutton {
 }
 
 popover modelbutton:hover, popover modelbutton:active {
-    background-color: @lighter_color;
+    background-color: @selected_color;
 }
 
 /**********************************************/
@@ -809,21 +807,20 @@ popover modelbutton:hover, popover modelbutton:active {
 /**********************************************/
 
 switch {
-	font-weight: bold;
     background-color: @darker_color;
-    border: 1px solid @trough_border_color;
+    border: 1px solid @border_color;
 }
 
 switch:checked {
     background-color: @scale_color;
     color: @white_color;
-    border: 1px solid @black_color;
+    border: 1px solid border_color;
 }
 
 switch:disabled {
     background-color: @disabled_bg;
     color: @disabled_color;
-    border: 1px solid @trough_border_color;
+    border: 1px solid border_color;
 }
 
 switch slider {
