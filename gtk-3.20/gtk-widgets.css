@@ -600,10 +600,7 @@ statusbar frame {
 /**********************************************/
 
 list {
-    border-left: 1px solid @outset_lighter_color;
-    border-top: 1px solid @outset_lighter_color;
-    border-right: 1.3px solid @black_color;
-    border-bottom: 1.3px solid @black_color;
+    border: 1px solid @border_color;
     padding: 7px;
     background-color: @lighter_color;
 }
