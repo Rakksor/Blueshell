@@ -3,6 +3,9 @@ Blueshell
 
 Bluecurve for GTK3
 
+* <https://gitlab.com/KlipKyle/Blueshell>
+* <https://www.opendesktop.org/p/1202217/>
+
 Bluecurve is the GTK theme introduced in Red Hat 8 and used up until
 Clearlooks replaced it.  It is a very clean old-school UI.
 
