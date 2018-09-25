@@ -73,6 +73,8 @@
 @define-color theme_selected_fg_color @white_color;
 @define-color theme_tooltip_bg_color @base_color;
 @define-color theme_tooltip_fg_color @black_color;
+@define-color insensitive_bg_color @disabled_bg;
+@define-color insensitive_fg_color @disabled_color;
 
 @import url("gtk-widgets.css");
 @import url("applications.css");
