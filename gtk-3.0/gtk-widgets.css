@@ -554,7 +554,8 @@ border: 1px solid @border_color;
 
 frame {
     background-color: @base_color;
-    border: 1px solid @border_color;
+    border: 1px solid @trough_bg_color;
+    box-shadow: inset 1px 1px @prelight_color, 1px 1px @prelight_color;
     padding: 5px;
     margin-top: 0.5em;
 }
@@ -562,6 +563,7 @@ frame {
 frame > label {
     background-color: @base_color;
     margin-top: -1em;
+    color: @darker_border_color;
 }
 
 /**********************************************/
