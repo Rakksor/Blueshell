@@ -821,10 +821,12 @@ switch:hover slider {
 combobox arrow {  
 	min-height: 15px;
 	min-width: 15px;
+	margin: -3px 0 -3px 0;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: right center;
     background-image: url("../img/combobox-arrow-down.png");
     border-left: 1px solid @border_color;
+    box-shadow: inset 1px 0 @lighter_color;
 }
 
 combobox arrow:disabled {  
@@ -837,6 +839,8 @@ combobox entry {
 
 combobox entry + button arrow {
     border: none;
+    box-shadow: none;
+    background-position: center center;
 }
 
 combobox button {
