@@ -52,6 +52,7 @@ button:active {
 }
 
 button.flat {
+    background-color: transparent;
     border: 1px solid transparent;
     box-shadow: none;
 }
@@ -63,6 +64,7 @@ button.flat:disabled {
 }
 
 button.flat:hover {
+    background-color: @prelight_color;
     border: 1px solid @darker_border_color;
     box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
 }
