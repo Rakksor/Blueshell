@@ -785,7 +785,7 @@ switch {
 }
 
 switch:checked {
-    background-color: @scale_color;
+    background-color: @selected_color;
     color: @white_color;
     border: 1px solid @border_color;
 }
