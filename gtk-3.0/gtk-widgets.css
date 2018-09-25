@@ -24,16 +24,15 @@
 button {
     background-color: @base_color;
     color: @black_color;
-    padding: 3px;
-    border-image: url("../img/button-norm.png") 2 repeat;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
+    padding: 4px;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
 }
 
 button:checked {
     background-color: @darker_color;
-    border-image: url("../img/button-active.png") 2 repeat;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset -1px -1px @lighter_color;
 }
 
 button:disabled {
@@ -49,24 +48,29 @@ button:hover {
 
 button:active {
     background-color: @darker_color;
-    border-image: url("../img/button-active.png") 2 repeat;
+    box-shadow: inset -1px -1px @lighter_color;
 }
 
 button.flat {
-    border-image: none;
+    border: 1px solid transparent;
+    box-shadow: none;
 }
 
 button.flat:disabled {
     background-color: @base_color;
-    border-image: none;
+    border: 1px solid transparent;
+    box-shadow: none;
 }
 
 button.flat:hover {
-    border-image: url("../img/button-norm.png") 2 repeat;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
 }
 
 button.flat:active {
-    border-image: url("../img/button-active.png") 2 repeat;
+    background-color: @darker_color;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset -1px -1px @lighter_color;
 }
 
 button.link {
@@ -92,24 +96,18 @@ headerbar {
 
 menubar {
     padding: 1px 1px 0 1px;
-    border-image: url("../img/toolbar.png") 1 repeat;
-    border-left: none;
-    border-top: none;
-    border-bottom: 1px solid transparent;
-    border-right: none;
+    border-bottom: 1px solid @trough_bg_color;
 }
 
 menu {
-    border-image: url("../img/menu.png") 2 repeat;
+    border: 1px solid @border_color;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
     padding: 4px 3px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
 }
 
 menuitem {
-    padding: 1px 6px;
-    border-width: 2px;
+    padding: 2px 7px;
+    border-width: 1px;
     border-style: solid;
     border-color: transparent;
 }
@@ -125,7 +123,8 @@ menuitem:active, menuitem:hover {
             @menuitem_top_color, @menuitem_bottom_color
         );
     color: @white_color;
-    border-image: url("../img/menuitem-active.png") 2 repeat;
+    border: 1px solid @menuitem_border_color;
+    box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
 }
 
 /**********************************************/
@@ -134,21 +133,19 @@ menuitem:active, menuitem:hover {
 
 toolbar {
     padding: 0 1px;
-    border-image: url("../img/toolbar.png") 1 / 1px 0 repeat;
-    border-left: none;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
-    border-width: 1px 0;
-    border-right: none;
+    border-top: 1px solid @prelight_color;
+    border-bottom: 1px solid @trough_bg_color;
 }
 
 toolbar button {
-    border: 2px solid transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
 }
 
 toolbar button:checked {
     background-color: @darker_color;
-    border-image: url("../img/button-active.png") 2 repeat;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset -1px -1px @lighter_color;
 }
 
 toolbar button:disabled {
@@ -157,17 +154,20 @@ toolbar button:disabled {
 }
 
 toolbar button:hover {
-    border-image: url("../img/button-norm.png") 2 repeat;
     background-color: @prelight_color;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
 }
 
 toolbar button:active {
     background-color: @darker_color;
-    border-image: url("../img/button-active.png") 2 repeat;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset -1px -1px @lighter_color;
 }
 
 toolbar button:checked {
-    border-image: url("../img/button-active.png") 2 repeat;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset -1px -1px @lighter_color;
 }
 
 /**********************************************/
@@ -306,10 +306,9 @@ scrollbar slider {
     min-width: 11px;
     min-height: 27px;
     margin: -1px;
-    border-image: url("../img/button-norm.png") 2 repeat;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+    padding: 1px;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("../img/scrollbar_thumb.png");
@@ -330,7 +329,7 @@ scrollbar slider:active {
 }
 
 scrollbar button {
-    padding: 1px;
+    padding: 2px;
     min-width: 9px;
     min-height: 9px;
 }
@@ -382,17 +381,14 @@ scrollbar button:active {
 entry {
     background-color: @lighter_color;
     color: @black_color;
-    padding: 2px;
-    border-image: url("../img/entry.png") 2 repeat;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
+    padding: 3px;
+    border: 1px solid @trough_border_color;
+    box-shadow: inset 1px 1px @entry_shadow_color;
 }
 
 entry:disabled {
     background-color: @entry_disabled_bg;
     color: @disabled_color;
-    border-image: url("../img/entry-disabled.png") 2 repeat;
 }
 
 label:disabled {
@@ -461,12 +457,9 @@ iconview {
 /* Tabs */
 notebook tab {
     background-color: @darker_color;
-    border: 1px solid @black_color;
-	padding: 2px 3px;
-    border-image: url("../img/button-norm.png") 2 repeat;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
+	padding: 3px 4px;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset 1px 1px @lighter_color;
 }
 
 notebook tab:checked,
@@ -475,10 +468,9 @@ notebook tab:active {
 }
 
 notebook.frame > stack {
-    border-image: url("../img/button-norm.png") 2 repeat;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+    padding: 1px;
 }
 
 /* Blend tabs with their corresponding stack */
@@ -496,6 +488,7 @@ notebook > header.top tab + tab {
 
 notebook > header.top tab:checked {
     border-bottom: 0px;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px 0 @darker_color;
 }
 
 notebook.frame > header.top tab:checked {
@@ -508,6 +501,7 @@ notebook > header.bottom {
 
 notebook.frame > header.bottom tab {
     border-top: 0;
+    box-shadow: inset 1px 0 @lighter_color;
 }
 
 notebook > header.bottom tab + tab {
@@ -517,6 +511,7 @@ notebook > header.bottom tab + tab {
 notebook > header.bottom tab:checked {
     border-top: 0;
     margin-bottom: -1px;
+    box-shadow: inset 1px 0 @lighter_color, inset -1px -1px @darker_color;
 }
 
 notebook.frame > header.bottom tab:checked {
@@ -538,6 +533,7 @@ notebook > header.left tab + tab {
 notebook > header.left tab:checked {
     border-right: 0;
     margin-left: -1px;
+    box-shadow: inset 1px 1px @lighter_color, inset 0 -1px @darker_color;
 }
 
 notebook.frame > header.left tab:checked {
@@ -550,6 +546,7 @@ notebook > header.right {
 
 notebook.frame > header.right tab {
     border-left: 0;
+    box-shadow: inset 0 1px @lighter_color;
 }
 
 notebook > header.right tab + tab {
@@ -559,6 +556,7 @@ notebook > header.right tab + tab {
 notebook > header.right tab:checked {
     border-left: 0;
     margin-right: -1px;
+    box-shadow: inset 0 1px @lighter_color, inset -1px -1px @darker_color;
 }
 
 notebook.frame > header.right tab:checked {
@@ -828,10 +826,9 @@ switch slider {
     background-color: @base_color;
     background-repeat: no-repeat;
     background-position: center center;
-    border-image: url("../img/button-norm.png") 2 repeat;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
+    border: 1px solid @darker_border_color;
+    padding: 1px;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
     margin: -1px;
 }
 
@@ -861,7 +858,7 @@ combobox arrow:disabled {
 }
 
 combobox entry {
-    padding: 3px;
+    padding: 4px;
 }
 
 combobox entry + button arrow {
@@ -869,11 +866,11 @@ combobox entry + button arrow {
 }
 
 combobox button {
-    padding: 2px;
+    padding: 3px;
 }
 
 combobox entry + button {
-    padding: 2px 3px;
+    padding: 3px 4px;
 }
 
 menuitem arrow {

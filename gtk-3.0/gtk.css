@@ -19,6 +19,7 @@
 
 @define-color selected_color #4464ac;
 @define-color border_color #a1a1a1;
+@define-color darker_border_color #5a5a5a;
 @define-color disabled_color #757575;
 @define-color disabled_bg #eeeeee;
 
@@ -38,10 +39,14 @@
 /* New colors (trial and error) */
 @define-color menuitem_top_color #445E9A;
 @define-color menuitem_bottom_color #5376C4;
+@define-color menuitem_light_color #98b2ed;
+@define-color menuitem_dark_color #4468b8;
+@define-color menuitem_border_color #3b4c71;
 
 @define-color trough_border_color #999999;
 @define-color trough_bg_color #c4c4c4;
 
+@define-color entry_shadow_color #dedede;
 @define-color entry_disabled_bg #f0f0f0;
 
 @define-color link_color #0000ee;
