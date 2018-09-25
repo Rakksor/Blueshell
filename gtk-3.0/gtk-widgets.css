@@ -268,6 +268,49 @@ progressbar.horizontal progress {
 }
 
 /**********************************************/
+/* levelbar */
+/**********************************************/
+
+levelbar trough {
+    background-color: @trough_bg_color;
+    border: 1px solid @trough_border_color;
+}
+
+levelbar.vertical trough {
+    min-width: 10px;
+}
+
+levelbar.horizontal trough {
+    min-height: 10px;
+}
+
+levelbar.discrete block {
+    border: 1px solid @trough_border_color;
+    background-color: @trough_bg_color;
+    margin: -1px;
+}
+
+levelbar.vertical block.filled {
+    margin: 0px;
+    background-image: linear-gradient(
+            to right,
+            @menuitem_top_color, @menuitem_light_color
+        );
+    border: 1px solid @menuitem_border_color;
+    box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
+}
+
+levelbar.horizontal block.filled {
+    margin: 0px;
+    background-image: linear-gradient(
+            to bottom,
+            @menuitem_top_color, @menuitem_light_color
+        );
+    border: 1px solid @menuitem_border_color;
+    box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
+}
+
+/**********************************************/
 /* scrollbar */
 /**********************************************/
 
