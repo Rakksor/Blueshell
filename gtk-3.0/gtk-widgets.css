@@ -18,6 +18,14 @@
 }
 
 /**********************************************/
+/* decoration */
+/**********************************************/
+
+decoration {
+    border: 1px solid @black_color;
+}
+
+/**********************************************/
 /* button */
 /**********************************************/
 
@@ -133,6 +141,16 @@ menuitem:active, menuitem:hover {
     color: @white_color;
     border: 1px solid @menuitem_border_color;
     box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
+}
+
+/**********************************************/
+/* headerbar */
+/**********************************************/
+
+headerbar {
+    padding: 4px;
+    border-top: 1px solid @prelight_color;
+    border-bottom: 1px solid @trough_bg_color;
 }
 
 /**********************************************/
