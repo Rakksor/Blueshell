@@ -744,6 +744,11 @@ check:checked {
     -gtk-icon-source: url("../img/check.png");
 }
 
+check:active {
+    background-color: @darker_color;
+    box-shadow: inset 1px 1px @check_active_border;
+}
+
 radio, radio:hover {
     margin: 4px;
     padding: 2px;
@@ -757,6 +762,11 @@ radio, radio:hover {
 
 radio:checked {
 	-gtk-icon-source: url("../img/radio.png");
+}
+
+radio:active {
+    background-color: @darker_color;
+    box-shadow: inset 1px 1px @check_active_border;
 }
 
 /* check and radio in menu */
