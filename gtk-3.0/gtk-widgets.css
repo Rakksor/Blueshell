@@ -419,7 +419,7 @@ label:disabled {
     color: @white_color;
 }
 
-.view rubberband {
+.view rubberband, .view .rubberband {
     background-color: alpha (@selected_color, 0.75);
     border: 1px solid @selected_color;
 }
