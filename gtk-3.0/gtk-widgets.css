@@ -416,6 +416,7 @@ label:disabled {
 .view:selected,
 .view:selected:focus {
     background-color: @selected_color;
+    color: @white_color;
 }
 
 .view rubberband {
@@ -429,6 +430,10 @@ label:disabled {
 
 treeview {
     background-color: @lighter_color;
+}
+
+treeview.view:selected {
+    color: @white_color;
 }
 
 /**********************************************/
