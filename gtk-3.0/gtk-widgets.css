@@ -441,10 +441,6 @@ treeview {
     background-color: @lighter_color;
 }
 
-treeview.view:selected {
-    color: @white_color;
-}
-
 /**********************************************/
 /* textview */
 /**********************************************/
@@ -645,6 +641,7 @@ row:selected {
 
 list row:active {
     background-color: @selected_color;
+    color: @lighter_color;
 }
 
 /**********************************************/
