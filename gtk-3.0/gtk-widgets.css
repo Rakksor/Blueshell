@@ -822,6 +822,7 @@ popover modelbutton:hover, popover modelbutton:active {
 /**********************************************/
 
 switch {
+    color: @black_color;
     background-color: @darker_color;
     border: 1px solid @border_color;
 }
