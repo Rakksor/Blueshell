@@ -681,7 +681,7 @@ toolbar.vertical separator {
     margin: 5px 7px;
 }
 
-menu separator {
+menu separator, popover separator {
 	margin: 4px 6px 6px 6px;
 	padding: 0px;
 	border-top: 1px solid @separator_darker_color;
@@ -822,7 +822,8 @@ popover {
 }
 
 popover modelbutton {
-	padding: 0px;
+	padding: 2px;
+	border: 1px solid transparent;
 }
 
 popover modelbutton:hover, popover modelbutton:active {
