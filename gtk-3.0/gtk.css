@@ -49,6 +49,8 @@
 @define-color entry_shadow_color #dedede;
 @define-color entry_disabled_bg #f0f0f0;
 
+@define-color check_button_border #5c5c5c;
+
 @define-color link_color #0000ee;
 @define-color link_visited_color #551a8b;
 

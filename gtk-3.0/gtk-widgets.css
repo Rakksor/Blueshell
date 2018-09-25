@@ -196,21 +196,28 @@ scale.vertical trough {
     margin: 0 7px;
 }
 
+scale slider {
+    background-color: @base_color;
+    border: 1px solid @darker_border_color;
+    border-radius: 3.5px;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+}
+
 scale.horizontal slider {
-    min-width: 31px;
-    min-height: 15px;
+    min-width: 29px;
+    min-height: 13px;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../img/scale-horizontal.png");
+    background-image: url("../img/scale_thumb_horizontal.png");
     margin: -6px 0;
 }
 
 scale.vertical slider {
-    min-width: 15px;
-    min-height: 31px;
+    min-width: 13px;
+    min-height: 29px;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../img/scale-vertical.png");
+    background-image: url("../img/scale_thumb.png");
     margin: 0 -6px;
 }
 
@@ -690,49 +697,40 @@ checkbutton:disabled, radiobutton:disabled {
     color: @lighter_color;
 }
 
-check {
+check, check:hover {
     margin: 4px;
-    min-width: 13px;
-    min-height: 13px;
-	-gtk-icon-source: url("../img/check-unchecked.png");
+    padding: 1px;
+    min-width: 9px;
+    min-height: 9px;
+    background-color: @white_color;
+    border: 1px solid @check_button_border;
+    box-shadow: inset 1px 1px @entry_shadow_color;
 }
 
 check:checked {
-	-gtk-icon-source: url("../img/check-checked.png");
+    -gtk-icon-source: url("../img/check.png");
 }
 
-radio {
+radio, radio:hover {
     margin: 4px;
-    min-width: 13px;
-    min-height: 13px;
-	-gtk-icon-source: url("../img/radio-unchecked.png");
+    padding: 2px;
+    min-width: 7px;
+    min-height: 7px;
+    background-color: @white_color;
+    border: 1px solid @check_button_border;
+    border-radius: 6px;
+    box-shadow: inset 1px 1px @entry_shadow_color;
 }
 
 radio:checked {
-    min-width: 13px;
-    min-height: 13px;
-	-gtk-icon-source: url("../img/radio-checked.png");
-}
-
-check:disabled {
-	-gtk-icon-source: none;
-}
-
-radio:disabled {
-	-gtk-icon-source: none;
-}
-
-check:disabled:checked {
-	-gtk-icon-source: url("../img/check-disabled-checked.png");
-}
-
-radio:disabled:checked {
-	-gtk-icon-source: url("../img/radio-disabled-checked.png");
+	-gtk-icon-source: url("../img/radio.png");
 }
 
 /* check and radio in menu */
-menuitem check, menuitem radio {
-	-gtk-icon-source: none;
+menuitem check, menuitem radio, menuitem check:hover, menuitem radio:hover {
+    background-color: transparent;
+    border-width: 0;
+    box-shadow: none;
     min-width: 8px;
     min-height: 7px;
 }
