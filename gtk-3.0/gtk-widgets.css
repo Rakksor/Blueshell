@@ -139,11 +139,6 @@ toolbar {
     border-bottom: 1px solid @trough_bg_color;
 }
 
-toolbar button {
-    border: 1px solid transparent;
-    box-shadow: none;
-}
-
 toolbar button:checked {
     background-color: @darker_color;
     border: 1px solid @darker_border_color;
@@ -167,9 +162,9 @@ toolbar button:active {
     box-shadow: inset -1px -1px @lighter_color;
 }
 
-toolbar button:checked {
+toolbar button:checked:hover {
     border: 1px solid @darker_border_color;
-    box-shadow: inset -1px -1px @lighter_color;
+    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @lighter_color;
 }
 
 /**********************************************/
