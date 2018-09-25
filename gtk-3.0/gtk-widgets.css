@@ -57,6 +57,12 @@ button.flat {
     box-shadow: none;
 }
 
+button.flat:checked {
+    background-color: @darker_color;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset -1px -1px @lighter_color;
+}
+
 button.flat:disabled {
     background-color: @base_color;
     border: 1px solid transparent;
