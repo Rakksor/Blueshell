@@ -418,10 +418,6 @@ scrollbar slider:hover {
     background-color: @prelight_color;
 }
 
-scrollbar slider:active {
-    background-color: @base_color;
-}
-
 scrollbar button {
     padding: 2px;
     min-width: 9px;
