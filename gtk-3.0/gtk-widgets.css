@@ -10,6 +10,26 @@
     color: @black_color;
 }
 
+/**********************************************/
+/* view */
+/**********************************************/
+
+.view {
+    background-color: @lighter_color;
+}
+
+.view rubberband, .view .rubberband {
+    background-color: alpha (@selected_color, 0.75);
+    border: 1px solid @selected_color;
+}
+
+.dialog-vbox {
+    background-color: @base_color;
+}
+
+/**********************************************/
+/* global selection and disabled colors */
+/**********************************************/
 *:selected, *:active, selection {
     background-color: @selected_color;
     color: @white_color;
@@ -487,29 +507,6 @@ overlay > scrolledwindow {
 }
 
 /**********************************************/
-/* view */
-/**********************************************/
-
-.view {
-    background-color: @lighter_color;
-}
-
-.view:selected,
-.view:selected:focus {
-    background-color: @selected_color;
-    color: @white_color;
-}
-
-.view rubberband, .view .rubberband {
-    background-color: alpha (@selected_color, 0.75);
-    border: 1px solid @selected_color;
-}
-
-.dialog-vbox {
-    background-color: @base_color;
-}
-
-/**********************************************/
 /* treeview */
 /**********************************************/
 
@@ -797,7 +794,7 @@ checkbutton:active label, radiobutton:active label {
     color: @black_color;
 }
 
-check, check:hover {
+check, check:hover, check:selected {
     margin: 4px;
     padding: 1px;
     min-width: 9px;
@@ -816,7 +813,7 @@ check:active {
     box-shadow: inset 1px 1px @check_active_border;
 }
 
-radio, radio:hover {
+radio, radio:hover, radio:selected {
     margin: 4px;
     padding: 2px;
     min-width: 7px;
