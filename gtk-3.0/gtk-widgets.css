@@ -507,6 +507,14 @@ overlay > scrolledwindow {
 }
 
 /**********************************************/
+/* placessidebar (filechooser and nautilus) */
+/**********************************************/
+
+placessidebar {
+    border: 1px solid @border_color;
+}
+
+/**********************************************/
 /* treeview */
 /**********************************************/
 
@@ -769,6 +777,13 @@ list separator.horizontal {
     background-image: none;
     border: none;
 	border-top: 1px solid @base_color;
+}
+
+/* filebrowser sidebar in gedit */
+.separator {
+    min-width: 12px;
+    min-height: 12px;
+    color: @base_color;
 }
 
 /**********************************************/
