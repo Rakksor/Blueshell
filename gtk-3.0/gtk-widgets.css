@@ -6,12 +6,22 @@
 
     outline: dotted 1px;
     outline-offset: -4px;
+
+    color: @black_color;
 }
 
+*:selected, *:active, selection {
+    background-color: @selected_color;
+    color: @white_color;
+}
 
-*:selected, *:active, * selection {
-	background-color: @selected_color;
-	color: @white_color;
+*:selected label, *:active label {
+    color: @white_color;
+}
+
+*:disabled * {
+    color: @disabled_color;
+    text-shadow: @white_color 1px 1px;
 }
 
 /**********************************************/
@@ -20,7 +30,6 @@
 
 .background {
     background-color: @base_color;
-    color: @black_color;
 }
 
 /**********************************************/
@@ -37,7 +46,6 @@ decoration {
 
 button {
     background-color: @base_color;
-    color: @black_color;
     padding: 4px;
     border: 1px solid @darker_border_color;
     box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
@@ -50,8 +58,6 @@ button:checked {
 }
 
 button:disabled {
-    color: @disabled_color;
-    text-shadow: @white_color 1px 1px;
     background-color: @disabled_bg;
     -gtk-icon-effect: dim;
 }
@@ -61,9 +67,12 @@ button:hover {
 }
 
 button:active {
-    color: @black_color;
     background-color: @darker_color;
     box-shadow: inset -1px -1px @lighter_color;
+}
+
+button:active label {
+    color: @black_color;
 }
 
 button.flat {
@@ -91,19 +100,30 @@ button.flat:hover {
 }
 
 button.flat:active {
-    color: @black_color;
     background-color: @darker_color;
     border: 1px solid @darker_border_color;
     box-shadow: inset -1px -1px @lighter_color;
 }
 
-button.link {
+button.flat:active label {
+    color: @black_color;
+}
+
+button.link label {
     color: @link_color;
     text-decoration: underline;
 }
 
-button.link:visited {
+button.link:visited label {
     color: @link_visited_color;
+}
+
+/**********************************************/
+/* spinbutton */
+/**********************************************/
+
+spinbutton:disabled {
+    color: @disabled_color;
 }
 
 /**********************************************/
@@ -136,19 +156,17 @@ menuitem {
     border-color: transparent;
 }
 
-menu:active, menu:hover{
-    background-color: @lighter_color;
-    color: @black_color;
-}
-
-menuitem:active, menuitem:hover {
+menuitem:hover {
     background-image: linear-gradient(
             to bottom,
             @menuitem_top_color, @menuitem_bottom_color
         );
-    color: @white_color;
     border: 1px solid @menuitem_border_color;
     box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
+}
+
+menuitem:hover > *, menuitem:hover > * > * {
+    color: @white_color;
 }
 
 /**********************************************/
@@ -189,10 +207,13 @@ toolbar button:hover {
 }
 
 toolbar button:active {
-    color: @black_color;
     background-color: @darker_color;
     border: 1px solid @darker_border_color;
     box-shadow: inset -1px -1px @lighter_color;
+}
+
+toolbar button:active label {
+    color: @black_color;
 }
 
 toolbar button:checked:hover {
@@ -231,6 +252,14 @@ scale slider {
     border: 1px solid @darker_border_color;
     border-radius: 3.5px;
     box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+}
+
+scale slider:active {
+    background-color: @prelight_color;
+}
+
+scale slider:disabled {
+    background-color: @disabled_bg;
 }
 
 scale.horizontal slider {
@@ -425,7 +454,6 @@ scrollbar button:active {
 
 entry {
     background-color: @lighter_color;
-    color: @black_color;
     padding: 3px;
     border: 1px solid @trough_border_color;
     box-shadow: inset 1px 1px @entry_shadow_color;
@@ -434,11 +462,6 @@ entry {
 entry:disabled {
     background-color: @entry_disabled_bg;
     color: @disabled_color;
-}
-
-label:disabled {
-    color: @disabled_color;
-    text-shadow: @white_color 1px 1px;
 }
 
 /**********************************************/
@@ -472,19 +495,8 @@ treeview {
 /* textview */
 /**********************************************/
 
-textview selection {
-    background-color: @selected_color;
-    color: @lighter_color;
-}
-
 textview {
     background-color: @lighter_color;
-    color: @black_color;
-}
-
-selection {
-    background-color: @selected_color;
-    color: @lighter_color;
 }
 
 /**********************************************/
@@ -493,7 +505,6 @@ selection {
 
 iconview {
     background-color: @lighter_color;
-    color: @black_color;
 }
 
 /**********************************************/
@@ -509,7 +520,6 @@ notebook tab {
 
 notebook tab:checked,
 notebook tab:active {
-    color: @black_color;
     background-color: @base_color;
 }
 
@@ -684,14 +694,9 @@ row {
     background-color: @lighter_color;
     padding: 5px;
     border: none;
-    }
-
-row:selected {
-    background-color: @selected_color;
-    color: @lighter_color;
 }
 
-list row:active {
+row:selected {
     background-color: @selected_color;
     color: @lighter_color;
 }
@@ -751,7 +756,6 @@ paned list separator.horizontal {
 /**********************************************/
 
 checkbutton, radiobutton {
-    color: @black_color;
     background-color: @base_color;
     outline-offset: -2px;
 }
@@ -760,8 +764,8 @@ checkbutton:hover, radiobutton:hover {
     background-color: @prelight_color;
 }
 
-checkbutton:disabled, radiobutton:disabled {
-    color: @lighter_color;
+checkbutton:active label, radiobutton:active label {
+    color: @black_color;
 }
 
 check, check:hover {
@@ -875,9 +879,12 @@ popover modelbutton:hover, popover modelbutton:active {
             to bottom,
             @menuitem_top_color, @menuitem_bottom_color
         );
-    color: @white_color;
     border: 1px solid @menuitem_border_color;
     box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
+}
+
+popover modelbutton:hover label, popover modelbutton:active label {
+    color: @white_color;
 }
 
 /**********************************************/
@@ -885,7 +892,6 @@ popover modelbutton:hover, popover modelbutton:active {
 /**********************************************/
 
 switch {
-    color: @black_color;
     background-color: @darker_color;
     border: 1px solid @border_color;
 }
@@ -903,7 +909,6 @@ switch:disabled {
 }
 
 switch slider {
-    color: @black_color;
     background-color: @base_color;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1010,7 +1015,6 @@ popover:hover > arrow.left {
 
 calendar {
     background-color: @lighter_color;
-    color: @black_color;
 }
 
 calendar:selected {
