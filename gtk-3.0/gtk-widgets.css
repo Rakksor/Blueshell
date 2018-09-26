@@ -8,6 +8,12 @@
     outline-offset: -4px;
 }
 
+
+*:selected, *:active, * selection {
+	background-color: @selected_color;
+	color: @white_color;
+}
+
 /**********************************************/
 /* background */
 /**********************************************/
