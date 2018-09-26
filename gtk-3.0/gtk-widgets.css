@@ -1039,10 +1039,11 @@ popover:hover > arrow.left {
 }
 
 /**********************************************/
-/* calandar */
+/* calendar */
 /**********************************************/
 
 calendar {
+    border: 1px solid @border_color;
     background-color: @lighter_color;
 }
 
