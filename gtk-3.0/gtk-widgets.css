@@ -745,14 +745,6 @@ separator {
 	border-left: 1px solid @border_color;
 }
 
-toolbar.horizontal separator {
-    margin: 7px 5px;
-}
-
-toolbar.vertical separator {
-    margin: 5px 7px;
-}
-
 menu separator, popover separator {
 	margin: 4px 6px 6px 6px;
 	padding: 0px;
