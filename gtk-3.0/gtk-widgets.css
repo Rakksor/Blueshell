@@ -484,6 +484,10 @@ entry:disabled {
     color: @disabled_color;
 }
 
+toolbar entry {
+    margin: 3px;
+}
+
 /**********************************************/
 /* scrolledwindow */
 /**********************************************/
