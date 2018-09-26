@@ -708,6 +708,7 @@ statusbar frame {
     border: none;
     box-shadow: none;
     margin-top: 0px;
+    padding: 0;
 }
 
 /**********************************************/
