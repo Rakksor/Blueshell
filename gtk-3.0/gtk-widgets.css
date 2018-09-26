@@ -465,6 +465,28 @@ entry:disabled {
 }
 
 /**********************************************/
+/* scrolledwindow */
+/**********************************************/
+
+scrolledwindow {
+    border: 1px solid @border_color;
+}
+
+junction {
+    background-color: @base_color;
+}
+
+/* fix geany */
+stack > scrolledwindow {
+    border: none;
+}
+
+/* fix nautilus */
+overlay > scrolledwindow {
+    background-color: @lighter_color;
+}
+
+/**********************************************/
 /* view */
 /**********************************************/
 
@@ -481,6 +503,10 @@ entry:disabled {
 .view rubberband, .view .rubberband {
     background-color: alpha (@selected_color, 0.75);
     border: 1px solid @selected_color;
+}
+
+.dialog-vbox {
+    background-color: @base_color;
 }
 
 /**********************************************/
@@ -647,7 +673,6 @@ notebook scrolledwindow.frame {
 /**********************************************/
 
 frame {
-    background-color: @base_color;
     border: 1px solid @trough_bg_color;
     box-shadow: inset 1px 1px @prelight_color, 1px 1px @prelight_color;
     padding: 5px;
@@ -660,11 +685,18 @@ frame > label {
     color: @darker_border_color;
 }
 
-/**********************************************/
 /* pathbar background in filechooser */
-/**********************************************/
 #pathbarbox {
     background-color: @bg_color;
+}
+
+
+/**********************************************/
+/* paned (required for gedit) */
+/**********************************************/
+
+paned {
+    background-color: @base_color;
 }
 
 /**********************************************/
@@ -682,7 +714,6 @@ statusbar frame {
 /**********************************************/
 
 list {
-    border: 1px solid @border_color;
     padding: 7px;
     background-color: @lighter_color;
 }
@@ -692,7 +723,6 @@ list {
 /**********************************************/
 
 row {
-    background-color: @lighter_color;
     padding: 5px;
     border: none;
 }
@@ -744,8 +774,7 @@ paned.horizontal separator {
 	background-repeat: no-repeat;
 }
 
-/* separator in nautilus side panel */
-paned list separator.horizontal {
+list separator.horizontal {
 	min-height:1px;
     background-image: none;
     border: none;
@@ -757,7 +786,6 @@ paned list separator.horizontal {
 /**********************************************/
 
 checkbutton, radiobutton {
-    background-color: @base_color;
     outline-offset: -2px;
 }
 
