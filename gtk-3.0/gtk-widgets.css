@@ -215,38 +215,6 @@ toolbar {
     background-color: @base_color;
 }
 
-toolbar button:checked {
-    background-color: @darker_color;
-    border: 1px solid @darker_border_color;
-    box-shadow: inset -1px -1px @lighter_color;
-}
-
-toolbar button:disabled {
-    -gtk-icon-effect: dim;
-    background-color: @base_color;
-}
-
-toolbar button:hover {
-    background-color: @prelight_color;
-    border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
-}
-
-toolbar button:active, toolbar button:active.focus {
-    background-color: @darker_color;
-    border: 1px solid @darker_border_color;
-    box-shadow: inset -1px -1px @lighter_color;
-}
-
-toolbar button:active label {
-    color: @black_color;
-}
-
-toolbar button:checked:hover {
-    border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @lighter_color;
-}
-
 /**********************************************/
 /* scale */
 /**********************************************/
@@ -462,15 +430,6 @@ scrollbar.horizontal button.down:disabled {
 	-gtk-icon-source: url("../img/arrow-right-disabled.png");
 }
 
-scrollbar button:hover {
-    background-color: @prelight_color;
-}
-
-scrollbar button:active, scrollbar button:active:focus {
-    background-color: @darker_color;
-}
-
-
 /**********************************************/
 /* entry */
 /**********************************************/
@@ -560,8 +519,7 @@ notebook tab {
 	border: 1px solid @darker_border_color;
 }
 
-notebook tab:checked,
-notebook tab:active, notebook tab:active:focus {
+notebook tab:checked {
     background-color: @base_color;
 }
 
@@ -743,11 +701,6 @@ row {
     border: none;
 }
 
-row:selected, row:selected:focus {
-    background-color: @selected_color;
-    color: @lighter_color;
-}
-
 /**********************************************/
 /* separator */
 /**********************************************/
@@ -918,7 +871,7 @@ popover modelbutton {
 	border: 1px solid transparent;
 }
 
-popover modelbutton:hover, popover modelbutton:active, popover modelbutton:active:focus {
+popover modelbutton:hover {
     background-image: linear-gradient(
             to bottom,
             @menuitem_top_color, @menuitem_bottom_color
@@ -927,7 +880,7 @@ popover modelbutton:hover, popover modelbutton:active, popover modelbutton:activ
     box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
 }
 
-popover modelbutton:hover label, popover modelbutton:active label {
+popover modelbutton:hover label {
     color: @white_color;
 }
 
@@ -1057,11 +1010,6 @@ popover:hover > arrow.left {
 calendar {
     border: 1px solid @border_color;
     background-color: @lighter_color;
-}
-
-calendar:selected, calendar:selected:focus {
-    background-color: @selected_color;
-    color: @lighter_color;
 }
 
 calendar:indeterminate {
