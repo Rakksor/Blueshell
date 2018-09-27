@@ -11,10 +11,10 @@
 }
 
 /**********************************************/
-/* decoration (for applications using CSDs) */
+/* decoration (for CSDs), tooltip */
 /**********************************************/
 
-decoration {
+decoration, tooltip {
     border: 1px solid @black_color;
 }
 
@@ -726,18 +726,6 @@ menuitem radio:hover:checked {
 
 menuitem radio:disabled:checked {
 	-gtk-icon-source: url("../img/menuitem-radio-checked-disabled.png");
-}
-
-/**********************************************/
-/* tooltip */
-/**********************************************/
-
-tooltip {
-    border: 1px solid @black_color;
-}
-
-tooltip.background {
-    background-color: @tooltip_color;
 }
 
 /**********************************************/
