@@ -78,15 +78,7 @@ decoration, tooltip {
 }
 
 /**********************************************/
-/* background, paned (grey background) */
-/**********************************************/
-
-.background, paned {
-	background-color: @theme_bg_color;
-}
-
-/**********************************************/
-/* views (white background) */
+/* items with white background (views) */
 /**********************************************/
 
 .view, iconview, textview, treeview {
@@ -102,7 +94,11 @@ decoration, tooltip {
 	border: 1px solid @theme_selected_bg_color;
 }
 
-.dialog-vbox {
+/**********************************************/
+/* items with grey background */
+/**********************************************/
+
+.background, .dialog-vbox, .app-notification, paned  {
 	background-color: @theme_bg_color;
 }
 
