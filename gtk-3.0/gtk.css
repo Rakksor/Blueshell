@@ -17,6 +17,7 @@
 @define-color black_color #000000;
 
 @define-color selected_color #4464ac;
+@define-color selected_color_unfocused #5e7ab7;
 @define-color border_color #a1a1a1;
 @define-color darker_border_color #5a5a5a;
 @define-color disabled_color #757575;
