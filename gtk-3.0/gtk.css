@@ -40,6 +40,7 @@
 /* other colors */
 /**********************************************/
 
+@define-color darker_color #cccccc;
 @define-color prelight_color #f5f5f5;
 @define-color separator_darker_color #CECECE;
 @define-color darker_border_color #5a5a5a;
