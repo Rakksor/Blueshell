@@ -11,11 +11,31 @@
 }
 
 /**********************************************/
-/* view */
+/* decoration (for applications using CSDs) */
 /**********************************************/
 
-.view {
+decoration {
+    border: 1px solid @black_color;
+}
+
+/**********************************************/
+/* background, paned (grey background) */
+/**********************************************/
+
+.background, paned {
+    background-color: @base_color;
+}
+
+/**********************************************/
+/* views (white background) */
+/**********************************************/
+
+.view, iconview, textview, treeview {
     background-color: @lighter_color;
+}
+
+.view:disabled, iconview:disabled, textview:disabled, treeview:disabled {
+    background-color: @disabled_bg;
 }
 
 .view rubberband, .view .rubberband {
@@ -30,6 +50,7 @@
 /**********************************************/
 /* global selection and disabled colors */
 /**********************************************/
+
 *:selected, *:active, selection {
     background-color: @selected_color_unfocused;
     color: @white_color;
@@ -49,22 +70,6 @@
 }
 
 /**********************************************/
-/* background */
-/**********************************************/
-
-.background {
-    background-color: @base_color;
-}
-
-/**********************************************/
-/* decoration */
-/**********************************************/
-
-decoration {
-    border: 1px solid @black_color;
-}
-
-/**********************************************/
 /* button */
 /**********************************************/
 
@@ -75,40 +80,31 @@ button {
     box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
 }
 
-button:checked {
-    background-color: @darker_color;
-    border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @lighter_color;
-}
-
-button:disabled {
-    background-color: @disabled_bg;
-    -gtk-icon-effect: dim;
-}
-
-button:hover {
-    background-color: @prelight_color;
-}
-
-button:active, button:active:focus {
-    background-color: @darker_color;
-    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @lighter_color;
-}
-
-button:active label {
-    color: @black_color;
-}
-
 button.flat {
     background-color: transparent;
     border: 1px solid transparent;
     box-shadow: none;
 }
 
-button.flat:checked {
+button:checked, button:active, button:active:focus {
     background-color: @darker_color;
     border: 1px solid @darker_border_color;
     box-shadow: inset 1px 1px @darker_color, inset -1px -1px @lighter_color;
+}
+
+button:hover:not(:active) {
+    background-color: @prelight_color;
+    border: 1px solid @darker_border_color;
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color
+}
+
+button:checked:hover, button:active:hover {
+    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @lighter_color;
+}
+
+button:disabled, spinbutton:disabled {
+    background-color: @disabled_bg;
+    -gtk-icon-effect: dim;
 }
 
 button.flat:disabled {
@@ -117,19 +113,7 @@ button.flat:disabled {
     box-shadow: none;
 }
 
-button.flat:hover {
-    background-color: @prelight_color;
-    border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
-}
-
-button.flat:active, button.flat:active:focus {
-    background-color: @darker_color;
-    border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @lighter_color;
-}
-
-button.flat:active label {
+button:active label {
     color: @black_color;
 }
 
@@ -143,23 +127,7 @@ button.link:visited label {
 }
 
 /**********************************************/
-/* spinbutton */
-/**********************************************/
-
-spinbutton:disabled {
-    color: @disabled_color;
-}
-
-/**********************************************/
-/* headerbar */
-/**********************************************/
-
-headerbar {
-    background-color: @base_color;
-}
-
-/**********************************************/
-/* menu */
+/* menuabr, menu, popover */
 /**********************************************/
 
 menubar {
@@ -167,52 +135,44 @@ menubar {
     border-bottom: 1px solid @trough_bg_color;
 }
 
-menu {
+menu, popover {
     border: 1px solid @border_color;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
     padding: 4px 3px;
 }
 
-menuitem {
-    padding: 2px 7px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent;
+menu {
+    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
 }
 
-menuitem:hover {
-    background-image: linear-gradient(
-            to bottom,
-            @menuitem_top_color, @menuitem_bottom_color
-        );
+menuitem, popover modelbutton {
+    padding: 2px 7px;
+    border: 1px solid transparent;
+}
+
+menuitem:hover, popover modelbutton:hover {
+    background-image: linear-gradient(to bottom, @menuitem_top_color, @menuitem_bottom_color);
     color: @white_color;
     border: 1px solid @menuitem_border_color;
     box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
 }
 
-menuitem:hover > *, menuitem:hover > * > * {
+menuitem:hover > *, menuitem:hover > * > *, popover modelbutton:hover label {
     color: @white_color;
 }
 
 /**********************************************/
-/* headerbar */
+/* headerbar, toolbar */
 /**********************************************/
 
-headerbar {
+headerbar, toolbar {
     padding: 4px;
     border-top: 1px solid @prelight_color;
     border-bottom: 1px solid @trough_bg_color;
+    background-color: @base_color;
 }
-
-/**********************************************/
-/* toolbar */
-/**********************************************/
 
 toolbar {
     padding: 0 1px;
-    border-top: 1px solid @prelight_color;
-    border-bottom: 1px solid @trough_bg_color;
-    background-color: @base_color;
 }
 
 /**********************************************/
@@ -281,49 +241,20 @@ scale indicator {
 }
 
 /**********************************************/
-/* progressbar */
+/* progressbar, levelbar */
 /**********************************************/
 
-progressbar trough {
+progressbar trough, levelbar trough {
     background-color: @trough_bg_color;
     border: 1px solid @trough_border_color;
 }
 
-progressbar.vertical trough {
+progressbar.vertical trough, progressbar.vertical progress {
     min-width: 20px;
 }
 
-progressbar.horizontal trough {
+progressbar.horizontal trough, progressbar.horizontal progress {
     min-height: 20px;
-}
-
-progressbar.vertical progress {
-    min-width: 20px;
-    background-image: linear-gradient(
-            to right,
-            @menuitem_top_color, @menuitem_light_color
-        );
-    border: 1px solid @menuitem_border_color;
-    box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
-}
-
-progressbar.horizontal progress {
-    min-height: 20px;
-    background-image: linear-gradient(
-            to bottom,
-            @menuitem_top_color, @menuitem_light_color
-        );
-    border: 1px solid @menuitem_border_color;
-    box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
-}
-
-/**********************************************/
-/* levelbar */
-/**********************************************/
-
-levelbar trough {
-    background-color: @trough_bg_color;
-    border: 1px solid @trough_border_color;
 }
 
 levelbar.vertical trough {
@@ -340,8 +271,7 @@ levelbar.discrete block {
     margin: -1px;
 }
 
-levelbar.vertical block.filled {
-    margin: 0px;
+progressbar.vertical progress, levelbar.vertical block.filled {
     background-image: linear-gradient(
             to right,
             @menuitem_top_color, @menuitem_light_color
@@ -350,8 +280,7 @@ levelbar.vertical block.filled {
     box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
 }
 
-levelbar.horizontal block.filled {
-    margin: 0px;
+progressbar.horizontal progress, levelbar.horizontal block.filled {
     background-image: linear-gradient(
             to bottom,
             @menuitem_top_color, @menuitem_light_color
@@ -478,34 +407,6 @@ overlay > scrolledwindow {
 
 placessidebar {
     border: 1px solid @border_color;
-}
-
-/**********************************************/
-/* treeview */
-/**********************************************/
-
-treeview {
-    background-color: @lighter_color;
-}
-
-treeview:disabled {
-    background-color: @disabled_bg;
-}
-
-/**********************************************/
-/* textview */
-/**********************************************/
-
-textview {
-    background-color: @lighter_color;
-}
-
-/**********************************************/
-/* iconview */
-/**********************************************/
-
-iconview {
-    background-color: @lighter_color;
 }
 
 /**********************************************/
@@ -663,15 +564,6 @@ frame > label {
     background-color: @bg_color;
 }
 
-
-/**********************************************/
-/* paned (required for gedit) */
-/**********************************************/
-
-paned {
-    background-color: @base_color;
-}
-
 /**********************************************/
 /* statusbar */
 /**********************************************/
@@ -775,15 +667,6 @@ check, check:hover, check:selected, check:selected:focus {
     box-shadow: inset 1px 1px @entry_shadow_color;
 }
 
-check:checked {
-    -gtk-icon-source: url("../img/check.png");
-}
-
-check:active, check:active:focus {
-    background-color: @darker_color;
-    box-shadow: inset 1px 1px @check_active_border;
-}
-
 radio, radio:hover, radio:selected, radio:selected:focus {
     margin: 4px;
     padding: 2px;
@@ -795,11 +678,15 @@ radio, radio:hover, radio:selected, radio:selected:focus {
     box-shadow: inset 1px 1px @entry_shadow_color;
 }
 
+check:checked {
+    -gtk-icon-source: url("../img/check.png");
+}
+
 radio:checked {
 	-gtk-icon-source: url("../img/radio.png");
 }
 
-radio:active, radio:active:focus {
+check:active, check:active:focus, radio:active, radio:active:focus {
     background-color: @darker_color;
     box-shadow: inset 1px 1px @check_active_border;
 }
@@ -825,8 +712,6 @@ menuitem check:hover:checked {
 
 menuitem check:disabled:checked {
 	-gtk-icon-source: url("../img/menuitem-check-checked-disabled.png");
-    min-width: 8px;
-    min-height: 7px;
 }
 
 menuitem radio:checked {
@@ -840,8 +725,6 @@ menuitem radio:hover:checked {
 }
 
 menuitem radio:disabled:checked {
-    min-width: 5px;
-    min-height: 5px;
 	-gtk-icon-source: url("../img/menuitem-radio-checked-disabled.png");
 }
 
@@ -855,33 +738,6 @@ tooltip {
 
 tooltip.background {
     background-color: @tooltip_color;
-}
-
-/**********************************************/
-/* popover */
-/**********************************************/
-
-popover {
-    border: 1px solid @border_color;
-    background-color: @base_color;
-}
-
-popover modelbutton {
-	padding: 2px;
-	border: 1px solid transparent;
-}
-
-popover modelbutton:hover {
-    background-image: linear-gradient(
-            to bottom,
-            @menuitem_top_color, @menuitem_bottom_color
-        );
-    border: 1px solid @menuitem_border_color;
-    box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
-}
-
-popover modelbutton:hover label {
-    color: @white_color;
 }
 
 /**********************************************/
@@ -957,18 +813,28 @@ combobox entry + button {
     padding: 3px 4px;
 }
 
-menuitem arrow {
+menuitem arrow, popover modelbutton arrow.right {
 	min-height: 9px;
 	min-width: 9px;
 	-gtk-icon-source: url("../img/arrow-right.png");
 }
 
-menuitem:hover > arrow {
+menuitem:hover > arrow, popover modelbutton:hover > arrow.right {
     -gtk-icon-source: url("../img/arrow-right-hover.png");
 }
 
 menuitem:disabled > arrow {
 	-gtk-icon-source: url("../img/arrow-right-disabled.png");
+}
+
+popover modelbutton arrow.left {
+	min-height: 9px;
+	min-width: 9px;
+	-gtk-icon-source: url("../img/arrow-left.png");
+}
+
+popover modelbutton:hover > arrow.left {
+    -gtk-icon-source: url("../img/arrow-left-hover.png");
 }
 
 expander arrow {
@@ -981,26 +847,6 @@ expander arrow {
 
 expander arrow:checked {
 	-gtk-icon-transform: unset;
-}
-
-popover arrow.right {
-	min-height: 9px;
-	min-width: 9px;
-	-gtk-icon-source: url("../img/arrow-right.png");
-}
-
-popover:hover > arrow.right {
-    -gtk-icon-source: url("../img/arrow-right-hover.png");
-}
-
-popover arrow.left {
-	min-height: 15px;
-	min-width: 8px;
-	-gtk-icon-source: url("../img/arrow-left.png");
-}
-
-popover:hover > arrow.left {
-    -gtk-icon-source: url("../img/arrow-left-hover.png");
 }
 
 /**********************************************/
