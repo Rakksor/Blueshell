@@ -208,6 +208,7 @@ toolbar {
     padding: 0 1px;
     border-top: 1px solid @prelight_color;
     border-bottom: 1px solid @trough_bg_color;
+    background-color: @base_color;
 }
 
 toolbar button:checked {
@@ -523,6 +524,10 @@ treeview {
     background-color: @lighter_color;
 }
 
+treeview:disabled {
+    background-color: @disabled_bg;
+}
+
 /**********************************************/
 /* textview */
 /**********************************************/
@@ -681,7 +686,6 @@ notebook scrolledwindow.frame {
 frame {
     border: 1px solid @trough_bg_color;
     box-shadow: inset 1px 1px @prelight_color, 1px 1px @prelight_color;
-    padding: 5px;
     margin-top: 0.5em;
 }
 
