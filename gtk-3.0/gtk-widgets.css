@@ -7,7 +7,7 @@
     outline: dotted 1px;
     outline-offset: -4px;
 
-    color: @black_color;
+    color: @theme_text_color;
 }
 
 /**********************************************/
@@ -15,7 +15,7 @@
 /**********************************************/
 
 decoration, tooltip {
-    border: 1px solid @black_color;
+    border: 1px solid @theme_fg_color;
 }
 
 /**********************************************/
@@ -23,7 +23,7 @@ decoration, tooltip {
 /**********************************************/
 
 .background, paned {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
 }
 
 /**********************************************/
@@ -31,20 +31,20 @@ decoration, tooltip {
 /**********************************************/
 
 .view, iconview, textview, treeview {
-    background-color: @lighter_color;
+    background-color: @theme_base_color;
 }
 
 .view:disabled, iconview:disabled, textview:disabled, treeview:disabled {
-    background-color: @disabled_bg;
+    background-color: @insensitive_bg_color;
 }
 
 .view rubberband, .view .rubberband {
-    background-color: alpha (@selected_color, 0.75);
-    border: 1px solid @selected_color;
+    background-color: alpha (@theme_selected_bg_color, 0.75);
+    border: 1px solid @theme_selected_bg_color;
 }
 
 .dialog-vbox {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
 }
 
 /**********************************************/
@@ -52,21 +52,21 @@ decoration, tooltip {
 /**********************************************/
 
 *:selected, *:active, selection {
-    background-color: @selected_color_unfocused;
-    color: @white_color;
+    background-color: @theme_unfocused_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 *:selected:focus, *:active:focus, selection:focus {
-    background-color: @selected_color;
+    background-color: @theme_selected_bg_color;
 }
 
 *:selected label, *:active label {
-    color: @white_color;
+    color: @theme_selected_fg_color;
 }
 
 *:disabled * {
-    color: @disabled_color;
-    text-shadow: @white_color 1px 1px;
+    color: @insensitive_fg_color;
+    text-shadow: @theme_selected_fg_color 1px 1px;
 }
 
 /**********************************************/
@@ -74,10 +74,10 @@ decoration, tooltip {
 /**********************************************/
 
 button {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
     padding: 4px;
     border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 1px 1px @theme_base_color, inset -1px -1px @darker_color;
 }
 
 button.flat {
@@ -89,32 +89,32 @@ button.flat {
 button:checked, button:active, button:active:focus {
     background-color: @darker_color;
     border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @lighter_color;
+    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @theme_base_color;
 }
 
 button:hover:not(:active) {
     background-color: @prelight_color;
     border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color
+    box-shadow: inset 1px 1px @theme_base_color, inset -1px -1px @darker_color
 }
 
 button:checked:hover, button:active:hover {
-    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @lighter_color;
+    box-shadow: inset 1px 1px @darker_color, inset -1px -1px @theme_base_color;
 }
 
 button:disabled, spinbutton:disabled {
-    background-color: @disabled_bg;
+    background-color: @insensitive_bg_color;
     -gtk-icon-effect: dim;
 }
 
 button.flat:disabled {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
     border: 1px solid transparent;
     box-shadow: none;
 }
 
 button:active label {
-    color: @black_color;
+    color: @theme_text_color;
 }
 
 button.link label {
@@ -136,12 +136,12 @@ menubar {
 }
 
 menu, popover {
-    border: 1px solid @border_color;
+    border: 1px solid @borders;
     padding: 4px 3px;
 }
 
 menu {
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 1px 1px @theme_base_color, inset -1px -1px @darker_color;
 }
 
 menuitem, popover modelbutton {
@@ -151,13 +151,13 @@ menuitem, popover modelbutton {
 
 menuitem:hover, popover modelbutton:hover {
     background-image: linear-gradient(to bottom, @menuitem_top_color, @menuitem_bottom_color);
-    color: @white_color;
+    color: @theme_selected_fg_color;
     border: 1px solid @menuitem_border_color;
     box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
 }
 
 menuitem:hover > *, menuitem:hover > * > *, popover modelbutton:hover label {
-    color: @white_color;
+    color: @theme_selected_fg_color;
 }
 
 /**********************************************/
@@ -168,7 +168,7 @@ headerbar, toolbar {
     padding: 4px;
     border-top: 1px solid @prelight_color;
     border-bottom: 1px solid @trough_bg_color;
-    background-color: @base_color;
+    background-color: @theme_bg_color;
 }
 
 toolbar {
@@ -202,10 +202,10 @@ scale.vertical trough {
 }
 
 scale slider {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
     border: 1px solid @darker_border_color;
     border-radius: 3.5px;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 1px 1px @theme_base_color, inset -1px -1px @darker_color;
 }
 
 scale slider:active, scale slider:active:focus {
@@ -213,7 +213,7 @@ scale slider:active, scale slider:active:focus {
 }
 
 scale slider:disabled {
-    background-color: @disabled_bg;
+    background-color: @insensitive_bg_color;
 }
 
 scale.horizontal slider {
@@ -237,7 +237,7 @@ scale.vertical slider {
 scale indicator {
     min-width: 1px;
     min-height: 5px;
-    background: @black_color;
+    background: @theme_fg_color;
 }
 
 /**********************************************/
@@ -299,12 +299,12 @@ scrollbar trough {
 }
 
 scrollbar slider {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
     min-width: 11px;
     min-height: 27px;
     margin: -1px;
     border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 1px 1px @theme_base_color, inset -1px -1px @darker_color;
     padding: 1px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -364,15 +364,15 @@ scrollbar.horizontal button.down:disabled {
 /**********************************************/
 
 entry {
-    background-color: @lighter_color;
+    background-color: @theme_base_color;
     padding: 3px;
     border: 1px solid @trough_border_color;
     box-shadow: inset 1px 1px @entry_shadow_color;
 }
 
 entry:disabled {
-    background-color: @entry_disabled_bg;
-    color: @disabled_color;
+    background-color: @insensitive_base_color;
+    color: @insensitive_fg_color;
 }
 
 toolbar entry {
@@ -384,11 +384,11 @@ toolbar entry {
 /**********************************************/
 
 scrolledwindow {
-    border: 1px solid @border_color;
+    border: 1px solid @borders;
 }
 
 junction {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
 }
 
 /* fix geany */
@@ -398,7 +398,7 @@ stack > scrolledwindow {
 
 /* fix nautilus */
 overlay > scrolledwindow {
-    background-color: @lighter_color;
+    background-color: @theme_base_color;
 }
 
 /**********************************************/
@@ -406,7 +406,7 @@ overlay > scrolledwindow {
 /**********************************************/
 
 placessidebar {
-    border: 1px solid @border_color;
+    border: 1px solid @borders;
 }
 
 /**********************************************/
@@ -421,12 +421,12 @@ notebook tab {
 }
 
 notebook tab:checked {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
 }
 
 notebook.frame > stack {
     border: 1px solid @darker_border_color;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 1px 1px @theme_base_color, inset -1px -1px @darker_color;
     padding: 1px;
 }
 
@@ -441,17 +441,17 @@ notebook.frame > header.top {
 
 notebook > header.top tab {
     margin-left: -1px;
-    box-shadow: inset 0 1px @lighter_color;
+    box-shadow: inset 0 1px @theme_base_color;
 }
 
 notebook > header.top tab:first-child {
-    box-shadow: inset 1px 1px @lighter_color;
+    box-shadow: inset 1px 1px @theme_base_color;
 }
 
 notebook > header.top tab:checked {
     border-bottom: 0px;
     margin-top: -1px;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px 0 @darker_color;
+    box-shadow: inset 1px 1px @theme_base_color, inset -1px 0 @darker_color;
 }
 
 notebook.frame > header.top tab:checked {
@@ -472,13 +472,13 @@ notebook.frame > header.bottom tab {
 }
 
 notebook.frame > header.bottom tab:first-child {
-    box-shadow: inset 1px 0 @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 1px 0 @theme_base_color, inset -1px -1px @darker_color;
 }
 
 notebook > header.bottom tab:checked {
     border-top: 0;
     margin-bottom: -1px;
-    box-shadow: inset 1px 0 @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 1px 0 @theme_base_color, inset -1px -1px @darker_color;
 }
 
 notebook.frame > header.bottom tab:checked {
@@ -495,17 +495,17 @@ notebook.frame > header.left {
 
 notebook.frame > header.left tab {
     margin-top: -1px;
-    box-shadow: inset 1px 0 @lighter_color;
+    box-shadow: inset 1px 0 @theme_base_color;
 }
 
 notebook.frame > header.left tab:first-child {
-    box-shadow: inset 1px 1px @lighter_color, inset 0 -1px @darker_color;
+    box-shadow: inset 1px 1px @theme_base_color, inset 0 -1px @darker_color;
 }
 
 notebook > header.left tab:checked {
     border-right: 0;
     margin-left: -1px;
-    box-shadow: inset 1px 1px @lighter_color, inset 0 -1px @darker_color;
+    box-shadow: inset 1px 1px @theme_base_color, inset 0 -1px @darker_color;
 }
 
 notebook.frame > header.left tab:checked {
@@ -525,13 +525,13 @@ notebook.frame > header.right tab {
 }
 
 notebook.frame > header.right tab:first-child {
-    box-shadow: inset 0 1px @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 0 1px @theme_base_color, inset -1px -1px @darker_color;
 }
 
 notebook > header.right tab:checked {
     border-left: 0;
     margin-right: -1px;
-    box-shadow: inset 0 1px @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 0 1px @theme_base_color, inset -1px -1px @darker_color;
 }
 
 notebook.frame > header.right tab:checked {
@@ -540,7 +540,7 @@ notebook.frame > header.right tab:checked {
 
 notebook scrolledwindow.frame {
     margin-top: -1px;
-    border: 1px solid @border_color;
+    border: 1px solid @borders;
 }
 
 /**********************************************/
@@ -554,7 +554,7 @@ frame {
 }
 
 frame > label {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
     margin-top: -1em;
     color: @darker_border_color;
 }
@@ -581,7 +581,7 @@ statusbar frame {
 
 list {
     padding: 7px;
-    background-color: @lighter_color;
+    background-color: @theme_base_color;
 }
 
 /**********************************************/
@@ -600,15 +600,15 @@ row {
 separator {
 	margin: 0px;
 	padding: 0px;
-	border-top: 1px solid @border_color;
-	border-left: 1px solid @border_color;
+	border-top: 1px solid @borders;
+	border-left: 1px solid @borders;
 }
 
 menu separator, popover separator {
 	margin: 4px 6px 6px 6px;
 	padding: 0px;
 	border-top: 1px solid @separator_darker_color;
-	border-bottom: 1px solid @separator_lighter_color;
+	border-bottom: 1px solid @theme_selected_fg_color;
 }
 
 paned.vertical separator {
@@ -631,14 +631,14 @@ list separator.horizontal {
 	min-height:1px;
     background-image: none;
     border: none;
-	border-top: 1px solid @base_color;
+	border-top: 1px solid @theme_bg_color;
 }
 
 /* filebrowser sidebar in gedit */
 .separator {
     min-width: 12px;
     min-height: 12px;
-    color: @base_color;
+    color: @theme_bg_color;
 }
 
 /**********************************************/
@@ -654,7 +654,7 @@ checkbutton:hover, checkbutton:active:focus, radiobutton:hover, radiobutton:acti
 }
 
 checkbutton:active label, radiobutton:active label {
-    color: @black_color;
+    color: @theme_text_color;
 }
 
 check, check:hover, check:selected, check:selected:focus {
@@ -662,7 +662,7 @@ check, check:hover, check:selected, check:selected:focus {
     padding: 1px;
     min-width: 9px;
     min-height: 9px;
-    background-color: @white_color;
+    background-color: @theme_selected_fg_color;
     border: 1px solid @check_button_border;
     box-shadow: inset 1px 1px @entry_shadow_color;
 }
@@ -672,7 +672,7 @@ radio, radio:hover, radio:selected, radio:selected:focus {
     padding: 2px;
     min-width: 7px;
     min-height: 7px;
-    background-color: @white_color;
+    background-color: @theme_selected_fg_color;
     border: 1px solid @check_button_border;
     border-radius: 6px;
     box-shadow: inset 1px 1px @entry_shadow_color;
@@ -734,33 +734,33 @@ menuitem radio:disabled:checked {
 
 switch {
     background-color: @darker_color;
-    border: 1px solid @border_color;
+    border: 1px solid @borders;
 }
 
 switch:checked {
-    background-color: @selected_color_unfocused;
-    color: @white_color;
-    border: 1px solid @border_color;
+    background-color: @theme_unfocused_selected_bg_color;
+    color: @theme_selected_fg_color;
+    border: 1px solid @borders;
 }
 
 switch:disabled {
-    background-color: @disabled_bg;
-    color: @disabled_color;
-    border: 1px solid @border_color;
+    background-color: @insensitive_bg_color;
+    color: @insensitive_fg_color;
+    border: 1px solid @borders;
 }
 
 switch slider {
-    background-color: @base_color;
+    background-color: @theme_bg_color;
     background-repeat: no-repeat;
     background-position: center center;
     border: 1px solid @darker_border_color;
     padding: 1px;
-    box-shadow: inset 1px 1px @lighter_color, inset -1px -1px @darker_color;
+    box-shadow: inset 1px 1px @theme_base_color, inset -1px -1px @darker_color;
     margin: -1px;
 }
 
 switch:disabled slider {
-    background-color: @disabled_bg;
+    background-color: @insensitive_bg_color;
 }
 
 switch:hover slider {
@@ -777,7 +777,7 @@ combobox arrow {
     background-repeat: no-repeat;
     background-position: right center;
     background-image: url("../img/combobox-arrow-down.png");
-    border-left: 1px solid @border_color;
+    border-left: 1px solid @borders;
 }
 
 combobox arrow:disabled {  
@@ -830,7 +830,7 @@ expander arrow {
 	min-height: 16px;
 	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 	-gtk-icon-transform: rotate(-90deg);
-	color: @black_color;
+	color: @theme_fg_color;
 }
 
 expander arrow:checked {
@@ -842,10 +842,10 @@ expander arrow:checked {
 /**********************************************/
 
 calendar {
-    border: 1px solid @border_color;
-    background-color: @lighter_color;
+    border: 1px solid @borders;
+    background-color: @theme_base_color;
 }
 
 calendar:indeterminate {
-    color: @inset_lighter_color;
+    color: @insensitive_fg_color;
 }
