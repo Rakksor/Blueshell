@@ -135,7 +135,7 @@ button {
 	box-shadow: inset 1px 1px @theme_base_color, inset -1px -1px @darker_color;
 }
 
-button.flat {
+button.flat, .appmenu, .minimize, .maximize, .close {
 	background-color: transparent;
 	border: 1px solid transparent;
 	box-shadow: none;
@@ -158,11 +158,12 @@ button:checked:hover, button:active:hover {
 }
 
 button:disabled, spinbutton:disabled {
+	color: @insensitive_fg_color;
 	background-color: @insensitive_bg_color;
 	-gtk-icon-effect: dim;
 }
 
-button.flat:disabled {
+button.flat:disabled, .titlebutton:disabled {
 	background-color: @theme_bg_color;
 	border: 1px solid transparent;
 	box-shadow: none;
@@ -179,6 +180,11 @@ button.link label {
 
 button.link:visited label {
 	color: @link_visited_color;
+}
+
+toolbar .image-button, headerbar .image-button,  .appmenu, .minimize, .maximize, .close {
+	min-width: 24px;
+	min-height: 24px;
 }
 
 /**********************************************/
@@ -211,7 +217,7 @@ menuitem:hover, popover modelbutton:hover {
 	box-shadow: inset 1px 1px @menuitem_light_color, inset -1px -1px @menuitem_dark_color;
 }
 
-menuitem:hover > *, menuitem:hover > * > *, popover modelbutton:hover label {
+menuitem:hover > *, menuitem:hover > * > *, menuitem:hover > * > * > *, popover modelbutton:hover label {
 	color: @theme_selected_fg_color;
 }
 
@@ -220,7 +226,7 @@ menuitem:hover > *, menuitem:hover > * > *, popover modelbutton:hover label {
 /**********************************************/
 
 headerbar, toolbar {
-	padding: 4px;
+	padding: 3px;
 	border-top: 1px solid @prelight_color;
 	border-bottom: 1px solid @trough_bg_color;
 	background-color: @theme_bg_color;
